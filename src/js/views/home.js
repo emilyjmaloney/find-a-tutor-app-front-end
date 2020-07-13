@@ -4,12 +4,12 @@ import "../../styles/home.scss";
 
 export const Home = () => (
 	<div className="text-center mt-5">
-		<h1>Hello Rigo!</h1>
+		<h1>No Rigo!</h1>
 		<p>
-			<img src={rigoImage} />
+			<img />
 		</p>
 		<a href="#" className="btn btn-success">
-			If you see this green button, bootstrap is working
+			If you see this green button, click on it!
 		</a>
 	</div>
 );
