@@ -18,7 +18,6 @@ export const Profile = props => {
 	);
 };
 
-// At the end. here would have a prop validation if we are using it
 Profile.propTypes = {
 	name: PropTypes.string
 };
