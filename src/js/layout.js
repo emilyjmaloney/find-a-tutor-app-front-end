@@ -6,6 +6,8 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
+import { Profile } from "./views/profile";
+import { Homepage } from "./views/homepage";
 
 import { Newnavbar } from "./component/newnavbar";
 import { Footer } from "./component/footer";
@@ -30,6 +32,12 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/single/:theid">
 							<Single />
+						</Route>
+						<Route exact path="/profile">
+							<Profile />
+						</Route>
+						<Route exact path="/homepage">
+							<Homepage />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
