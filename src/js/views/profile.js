@@ -1,27 +1,13 @@
-import React from "react"
+import React from "react";
+import PropTypes from "prop-types";
 
-//include your index.scss file into the bundle
-import "../styles/index.scss";
-
-//include bootstrap npm library into the bundle
-import "bootstrap/dist/css/bootstrap.css";
-
-//import your own components
-import Layout from "./layout";
-
-
-export const Profile = () => (
-    <div>
-        <h1>
-            Profile
-        </h1>
-    </div>
+export const Profile = props => (
+	<div>
+		<h1>{props.name}</h1>
+	</div>
 );
 
-
-
-
-
-//render your react application
-ReactDOM.render(<Layout />, document.querySelector("#app"));
-
+// At the end. here would have a prop validation if we are using it
+Profile.propTypes = {
+	name: PropTypes.string
+};

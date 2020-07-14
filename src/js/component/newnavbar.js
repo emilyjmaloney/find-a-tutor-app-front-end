@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export function Newnavbar() {
 	return (
@@ -23,10 +24,16 @@ export function Newnavbar() {
 						Inbox
 					</a>
 				</li>
+
 				<li className="nav-item mx-1">
-					<a className="nav-link" href="#">
+					<Link to="/profile">
+						<button className="btn btn-outline-success my-2 my-sm-0">Profile</button>
+					</Link>
+				</li>
+				<li className="nav-item mx-1">
+					<Link className="nav-link" to="/profile">
 						Profile
-					</a>
+					</Link>
 				</li>
 			</ul>
 			<form className="form-inline my-2 my-lg-0">
