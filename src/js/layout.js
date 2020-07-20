@@ -7,7 +7,6 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { Profile } from "./views/profile";
 import injectContext from "./store/appContext";
-import { Profile } from "./views/profile";
 import { Homepage } from "./views/homepage";
 
 import { Newnavbar } from "./component/newnavbar";
