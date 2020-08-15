@@ -7,12 +7,17 @@ import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Homepage } from "./views/homepage";
 import { Newnavbar } from "./component/newnavbar";
+<<<<<<< HEAD
 import { Footer } from "./component/footer";
 import { Profileheader } from "./component/profileheader";
 import { Profilenav } from "./component/profilenav";
 import { Useraccount } from "./views/useraccount";
 import { Adminstudent } from "./views/adminstudent";
 import { Account } from "./views/account";
+=======
+import { Newfooter } from "./component/newfooter";
+
+>>>>>>> ea33aa83fb5fea4004a030ce9209a71058fdefde
 //create your first component
 export const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
@@ -37,13 +42,17 @@ export const Layout = () => {
 							<Account />
 						</Route>
 						<Route exact path="/homepage">
-							<Homepage />
+							<Homepage name={"Hello World"} />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
+<<<<<<< HEAD
 					{/* <Footer /> */}
+=======
+					<Newfooter />
+>>>>>>> ea33aa83fb5fea4004a030ce9209a71058fdefde
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
