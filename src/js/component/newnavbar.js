@@ -26,12 +26,12 @@ export function Newnavbar() {
 				</li>
 
 				<li className="nav-item mx-1">
-					<Link to="/profile">
+					<Link to="/account">
 						<button className="btn btn-outline-success my-2 my-sm-0">Profile</button>
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link className="nav-link" to="/profile">
+					<Link className="nav-link" to="/account">
 						Profile
 					</Link>
 				</li>

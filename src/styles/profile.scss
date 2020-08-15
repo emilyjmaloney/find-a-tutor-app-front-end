@@ -1,0 +1,178 @@
+.button {
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    background: lightgrey;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.button:hover {
+    background: grey;
+    transition: 0.5s;
+}
+// Delete account
+.delete-account{
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    font-size: 16px;
+}
+
+//second nav
+.second-nav {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+.second-nav-link {
+    padding: 12px 24px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid white;
+    font-size: 16px;
+    font-weight: 500;
+    // cursor: pointer;
+    &.selected{ 
+    border-bottom: 2px solid blue;
+    transition: 0.2s;}
+}
+
+.second-nav-link:hover {
+    border-bottom: 2px solid lightgray;
+    transition: 0.5s;
+}
+
+// .second-nav-link:active {
+//     border-bottom: 2px solid blue;
+//     transition: 0.2s;
+// }
+
+// .second-nav-link:selected {
+//     box-shadow: #f8ffcc 0px 0px 50px 20px;
+// }
+
+// profile header card
+.default-cover-image {
+    background-color: lightcyan;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: gray;
+    // background-image: ??
+}
+
+.subtext {
+font-size: 22px;
+}
+
+// .typographic-line {
+//     background-color: black;
+//     height: 1px;
+//     width: 100%;
+// }
+
+// card
+.profile-card {
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+}
+
+.headline {
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.label {
+    margin-bottom: 8px;
+}
+
+.databox {
+    background-color: rgb(240, 240, 240);
+    padding: 16px;
+    border-radius: 5px;
+    display: flex;
+    flex-grow: 1;
+    // flex-grow: 2;
+
+}
+
+// Grid
+.grid-col1 {
+    display: grid;
+    grid: 1fr;
+    grid-gap: 20px;
+    grid-auto-rows: 1fr;
+}
+
+.grid-col2 {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    grid-gap: 20px;
+    grid-auto-rows: 1fr;
+}
+
+.grid-col3 {
+    display: grid;
+    grid: 1fr / 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-auto-rows: 1fr;
+}
+
+.profile-header {
+    display: grid;
+    grid: 1fr / 1fr 1fr;
+    grid-gap: 40px;
+    grid-auto-rows: 1fr;
+    justify-items: end;
+    margin-bottom: 20px;
+}
+
+.profile-header div:nth-child(2) {
+    display: grid;
+    grid-gap: 8px;
+    justify-self: start;
+    align-self: center;
+}
+
+// Containter
+.grid-container {
+    display: grid;
+    grid: auto / 900px;
+    justify-content: center;
+    grid-gap: 24px;
+}
+
+// availability
+
+.weekday {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid ;
+    &.monday {border: 2px solid red;}
+    &.tuesday {border: 2px solid orange;}
+    &.wednesday {border: 2px solid yellow;}
+    &.thursday {border: 2px solid green;}
+    &.friday {border: 2px solid blue;}
+    &.saturday {border: 2px solid purple;}
+    &.sunday {border: 2px solid teal;}
+}
+
+.slot {
+    background-color: rgb(240, 240, 240);
+    padding: 16px;
+    border-radius: 5px;
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    &.selected {background-color: rgb(24, 10, 155)}
+}
