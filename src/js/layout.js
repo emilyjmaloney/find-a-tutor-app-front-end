@@ -7,11 +7,10 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import { Profile } from "./views/profile";
 import injectContext from "./store/appContext";
-import { Profile } from "./views/profile";
 import { Homepage } from "./views/homepage";
 
 import { Newnavbar } from "./component/newnavbar";
-import { Footer } from "./component/footer";
+import { Newfooter } from "./component/newfooter";
 
 //create your first component
 export const Layout = () => {
@@ -38,13 +37,13 @@ export const Layout = () => {
 							<Profile name={"ernesto"} />
 						</Route>
 						<Route exact path="/homepage">
-							<Homepage />
+							<Homepage name={"Hello World"} />
 						</Route>
 						<Route>
 							<h1>Not found!</h1>
 						</Route>
 					</Switch>
-					<Footer />
+					<Newfooter />
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>
