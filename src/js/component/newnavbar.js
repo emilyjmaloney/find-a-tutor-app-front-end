@@ -27,27 +27,12 @@ export function Newnavbar() {
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-<<<<<<< HEAD
-					<a className="nav-link" href="#">
-						Inbox
-					</a>
-				</li>
-
-				<li className="nav-item mx-1">
-					<Link to="/account">
-						<button className="btn btn-outline-success my-2 my-sm-0">Profile</button>
-					</Link>
-				</li>
-				<li className="nav-item mx-1">
-					<Link className="nav-link" to="/account">
-=======
 					<Link to="/profile">
 						<button className="btn btn-dark my-2 my-sm-0">Search</button>
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link className="btn btn-dark my-2 my-sm-0" to="/profile">
->>>>>>> ea33aa83fb5fea4004a030ce9209a71058fdefde
+					<Link className="btn btn-dark my-2 my-sm-0" to="/account">
 						Profile
 					</Link>
 				</li>
