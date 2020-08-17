@@ -8,6 +8,7 @@ import { Single } from "./views/single";
 import { Profile } from "./views/profile";
 import injectContext from "./store/appContext";
 import { Homepage } from "./views/homepage";
+import { Searchstudentsheader } from "./component/searchstudentsheader";
 
 import { Newnavbar } from "./component/newnavbar";
 import { Newfooter } from "./component/newfooter";
