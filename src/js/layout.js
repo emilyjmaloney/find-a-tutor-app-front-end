@@ -29,7 +29,7 @@ export const Layout = () => {
 					<Newnavbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Searchstudentsheader />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />

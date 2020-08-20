@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
-export function Newnavbar() {
+export const Newnavbar = () => {
+	const { store, actions } = useContext(Context);
 	return (
 		<nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
 			<Link to="/homepage">
@@ -42,6 +44,22 @@ export function Newnavbar() {
 					</Link>
 				</li>
 			</ul>
+			<nav className="navbar navbar-dark bg-dark my-2 my-sm-0">
+				<Link to="/">
+					<span className="navbar-brand" />
+				</Link>
+				<div className="ml-auto">
+					{/* <Link to="/demo"> */}
+					{store.token != null ? (
+						<button onClick={() => actions.logout()} className="btn btn-light">
+							Logout
+						</button>
+					) : (
+						<button className="btn btn-dark">Login</button>
+					)}
+					{/* </Link> */}
+				</div>
+			</nav>
 		</nav>
 	);
-}
+};

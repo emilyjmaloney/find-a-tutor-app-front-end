@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/homepage.scss";
+import { Context } from "../store/appContext";
 
 export const Homepage = () => {
+	const { store, actions } = useContext(Context);
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 	return (
 		<div className="container-fluid">
 			<div className="login-box w-100 justify-content-center d-flex align-items-center">
@@ -13,7 +17,7 @@ export const Homepage = () => {
 					<form>
 						<div className="form-group row">
 							<label htmlFor="inputEmail3" className="col-sm-2 col-form-label">
-								Username
+								Email Address
 							</label>
 							<div className="input-group">
 								<div className="input-group-prepend">
@@ -21,10 +25,17 @@ export const Homepage = () => {
 										<i className="far fa-user" />
 									</span>
 								</div>
-								<input type="email" className="form-control" id="inputEmail3" placeholder="Username" />
+								<input
+									type="email"
+									className="form-control"
+									id="inputEmail3"
+									placeholder="Email Address"
+									required
+									autoFocus
+									onChange={e => setEmail(e.target.value)}
+								/>
 							</div>
 						</div>
-
 						<div className="form-group row">
 							<label htmlFor="inputPassword3" className="col-sm-2 col-form-label">
 								Password
@@ -40,6 +51,8 @@ export const Homepage = () => {
 									className="form-control"
 									id="inputPassword3"
 									placeholder="Password"
+									required
+									onChange={e => setPassword(e.target.value)}
 								/>
 							</div>
 						</div>
@@ -76,9 +89,19 @@ export const Homepage = () => {
 								</div>
 							</div>
 						</fieldset>
+						<div className="checkbox mb-3">
+							<label>
+								<input type="checkbox" value="remember-me" /> Remember me
+							</label>
+						</div>
 						<div className="form-group row justify-content-center" id="login-button">
 							<div className="col-sm-4">
 								<button
+									onClick={e => {
+										e.preventDefault();
+										e.stopPropagation();
+										actions.login(email, password);
+									}}
 									type="submit"
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
 									Login
@@ -204,7 +227,7 @@ export const Homepage = () => {
 										</div>
 									</div>
 									<div className="form-group">
-										<label htmlFor="inputAddress">Username</label>
+										<label htmlFor="inputAddress">Email Address</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -216,7 +239,7 @@ export const Homepage = () => {
 												className="form-control"
 												id="inputAddress"
 												// <i className="far fa-user"></i>
-												placeholder="Username"
+												placeholder="Email Address"
 											/>
 										</div>
 									</div>
@@ -281,3 +304,8 @@ export const Homepage = () => {
 // In the to do list: Examples of input
 // The contact list: Bootstrap Modal with the clickable trash can to delete input.
 // *Can go to fontawesome to find other clickable icons to do different things.
+
+// # All Users
+// # UN: emilyjean.maloney@gmail.com PW: emsmSecret
+// # UN: emily@gmail.com PW: password123
+// # UN: emilym@gmail.com PW: password123
