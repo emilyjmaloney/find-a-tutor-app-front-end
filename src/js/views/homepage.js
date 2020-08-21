@@ -57,7 +57,7 @@ export const Homepage = () => {
 							</div>
 						</div>
 						{/* I am a tutor / student radios */}
-						<fieldset className="form-group" id="top-radios">
+						{/* <fieldset className="form-group" id="top-radios">
 							<div className="row">
 								<legend className="col-form-label col-sm-2 pt-0">I am a </legend>
 								<div className="col-sm-10">
@@ -88,7 +88,7 @@ export const Homepage = () => {
 									</div>
 								</div>
 							</div>
-						</fieldset>
+						</fieldset> */}
 						<div className="checkbox mb-3">
 							<label>
 								<input type="checkbox" value="remember-me" /> Remember me
@@ -97,12 +97,13 @@ export const Homepage = () => {
 						<div className="form-group row justify-content-center" id="login-button">
 							<div className="col-sm-4">
 								<button
-									onClick={e => {
-										e.preventDefault();
-										e.stopPropagation();
-										actions.login(email, password);
-									}}
-									type="submit"
+									// onClick={e => {
+									// 	e.preventDefault();
+									// 	e.stopPropagation();
+									// 	actions.login(email, password);
+									// }}
+									onClick={() => actions.login(email, password)}
+									type="button" //changed from submit
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
 									Login
 								</button>
@@ -227,7 +228,7 @@ export const Homepage = () => {
 										</div>
 									</div>
 									<div className="form-group">
-										<label htmlFor="inputAddress">Email Address</label>
+										<label htmlFor="inputAddress">Username</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -239,7 +240,7 @@ export const Homepage = () => {
 												className="form-control"
 												id="inputAddress"
 												// <i className="far fa-user"></i>
-												placeholder="Email Address"
+												placeholder="Username"
 											/>
 										</div>
 									</div>
