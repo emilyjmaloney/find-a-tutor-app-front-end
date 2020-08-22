@@ -11,17 +11,6 @@ export const Newnavbar = () => {
 					Find A Tutor!
 				</a>
 			</Link>
-			{/* <form className="form-inline my-2 my-lg-0">
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Searching
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Inboxing
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Profileing
-				</button>
-			</form> */}
 			<ul className="navbar-nav flex-row ml-auto">
 				<li className="nav-item mx-1">
 					<Link to="/homepage">
@@ -29,7 +18,7 @@ export const Newnavbar = () => {
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link to="/profile">
+					<Link to="/searchstudentsheader">
 						<button className="btn btn-dark my-2 my-sm-0">Search</button>
 					</Link>
 				</li>
@@ -44,12 +33,13 @@ export const Newnavbar = () => {
 					</Link>
 				</li>
 			</ul>
+
+			{/* Login/logout button that Paolo had in the example from class: */}
 			<nav className="navbar navbar-dark bg-dark my-2 my-sm-0">
 				<Link to="/">
 					<span className="navbar-brand" />
 				</Link>
 				<div className="ml-auto">
-					{/* <Link to="/demo"> */}
 					{store.token != null ? (
 						<button onClick={() => actions.logout()} className="btn btn-light">
 							Logout
@@ -57,9 +47,22 @@ export const Newnavbar = () => {
 					) : (
 						<button className="btn btn-dark">Login</button>
 					)}
-					{/* </Link> */}
 				</div>
 			</nav>
 		</nav>
 	);
 };
+
+{
+	/* <form className="form-inline my-2 my-lg-0">
+				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+					Searching
+				</button>
+				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+					Inboxing
+				</button>
+				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
+					Profileing
+				</button>
+			</form> */
+}

@@ -214,7 +214,8 @@ export const Homepage = () => {
 												type="email"
 												className="form-control"
 												id="inputEmail4"
-												placeholder="First Name"
+                                                placeholder="First Name"
+                                                onChange={e => setFirstName(e.target.value)}
 											/>
 										</div>
 										<div className="form-group col-md-6">
@@ -223,7 +224,8 @@ export const Homepage = () => {
 												type="password"
 												className="form-control"
 												id="inputPassword4"
-												placeholder="Last Name"
+                                                placeholder="Last Name"
+                                                onChange={e => setLastName(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -240,7 +242,8 @@ export const Homepage = () => {
 												className="form-control"
 												id="inputAddress"
 												// <i className="far fa-user"></i>
-												placeholder="Username"
+                                                placeholder="Username"
+                                                onChange={e => setUsername(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -257,7 +260,8 @@ export const Homepage = () => {
 												className="form-control"
 												id="inputAddress2"
 												// <i className="fas fa-envelope"></i>
-												placeholder="Email Address"
+                                                placeholder="Email Address"
+                                                onChange={e => setSignupEmail(e.target.value)}
 											/>
 										</div>
 									</div>
@@ -274,7 +278,8 @@ export const Homepage = () => {
 												className="form-control"
 												id="inputAddress3"
 												// <i className="fas fa-lock"></i>
-												placeholder="Password"
+                                                placeholder="Password"
+                                                onChange={e => setSignupPassword(e.target.value)}
 											/>
 										</div>
 									</div>

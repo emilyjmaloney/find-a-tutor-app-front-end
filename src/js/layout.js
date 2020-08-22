@@ -28,7 +28,10 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Newnavbar />
 					<Switch>
-						<Route exact path="/">
+						<Route exact path="/home">
+							<Home />
+						</Route>
+						<Route exact path="/searchstudentsheader">
 							<Searchstudentsheader />
 						</Route>
 						<Route exact path="/demo">
