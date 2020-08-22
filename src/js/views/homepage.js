@@ -4,8 +4,15 @@ import { Context } from "../store/appContext";
 
 export const Homepage = () => {
 	const { store, actions } = useContext(Context);
-	const [email, setEmail] = useState("");
-	const [password, setPassword] = useState("");
+    //login
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    // signup
+    const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [username, setUsername] = useState("");
+    const [signupEmail, setSignupEmail] = useState("");
+    const [signupPassword, setSignupPassword] = useState("");
 	return (
 		<div className="container-fluid">
 			<div className="login-box w-100 justify-content-center d-flex align-items-center">
