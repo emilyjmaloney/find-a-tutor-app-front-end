@@ -1,9 +1,10 @@
 import React from "react";
 import "../../styles/profile.scss";
+import PropTypes from "prop-types";
 import { ProfileModal } from "../component/profilemodal";
 import { Weeklyavailability } from "../component/weeklyavailability";
 
-export const Adminstudent = () => {
+export const Admintutor = props => {
 	return (
 		<div>
 			<div className="grid-container">
@@ -14,51 +15,49 @@ export const Adminstudent = () => {
 					</div>
 					<ProfileModal title="About Me" id="about-me-modal" />
 					<div>
-						<p>About me prop</p>
+						<p>About Me</p>
 					</div>
 				</div>
 				<div className="profile-card">
 					<div className="headline">
-						<h5>Academic Info</h5>
-						<i className="fas fa-pen" data-toggle="modal" data-target="#academic-modal" type="button" />
+						<h5>Experience Info</h5>
+						<i className="fas fa-pen" data-toggle="modal" data-target="#experience-modal" type="button" />
 					</div>
-					<ProfileModal title="Academic Info" id="academic-modal" />
+					<ProfileModal title="Experience Info" id="experience-modal" />
 
 					<div className="grid-col2">
-						<div className="profile-userdata">
-							<div className="label">My Current Grade</div>
-							<div className="databox">Grade prop</div>
+						<div>
+							<p>Experience</p>
 						</div>
 						<div className="profile-userdata">
 							<div className="label">Available For Remote Sessions</div>
-							<div className="databox">online Boolean prop</div>
+							<div className="databox">Online</div>
 						</div>
 					</div>
 				</div>
 
 				<div className="profile-card">
 					<div className="headline">
-						<h5>Subjects I Want To Learn</h5>
+						<h5>Subjects That I Teach</h5>
 						<i className="fas fa-pen" data-toggle="modal" data-target="#subjects-modal" type="button" />
 					</div>
-					<ProfileModal title="Subjects I Want to Learn" id="subjects-modal" />
+					<ProfileModal title="Subjects That I Teach" id="subjects-modal" />
 
 					<div className="grid-col3">
 						<div className="profile-userdata">
 							<div className="label">First Subject</div>
-							<div className="databox">Subject prop</div>
+							<div className="databox">Subject 1</div>
 						</div>
 						<div className="profile-userdata">
 							<div className="label">Second Subject</div>
-							<div className="databox">Subject prop</div>
+							<div className="databox">Subject 2</div>
 						</div>
 						<div className="profile-userdata">
 							<div className="label">Third Subject</div>
-							<div className="databox">Subject prop</div>
+							<div className="databox">Subject 3</div>
 						</div>
 					</div>
 				</div>
-
 				<div className="profile-card">
 					<div className="headline">
 						<h5>My Availability</h5>
@@ -74,3 +73,9 @@ export const Adminstudent = () => {
 		</div>
 	);
 };
+// Admintutor.propTypes = {
+// 	aboutMe: PropTypes.string,
+// 	experience: PropTypes.string,
+// 	online: PropTypes.string,
+// 	subjects: PropTypes.string
+// };

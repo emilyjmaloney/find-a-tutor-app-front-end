@@ -37,7 +37,7 @@ export function Newnavbar() {
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link to="/profile">
+					<Link to="/messages">
 						<button className="btn btn-dark my-2 my-sm-0">Message</button>
 					</Link>
 				</li>

@@ -1,0 +1,41 @@
+.subjects {
+  margin-bottom: 15px !important;
+}
+
+// MODAL
+.modal-databox {
+    background-color: rgb(240, 240, 240);
+    padding: 12px 16px 12px 16px;
+    border-radius: 5px;
+    display: flex;
+    flex-grow: 1;
+}
+
+.modal-day {
+    background: white;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+    border-radius: 8px;
+}
+
+.modal-day-label {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+// GRID MODAL
+
+.grid-modal-col1 {
+    display: grid;
+    grid: 1fr;
+    grid-gap: 16px;
+    grid-auto-rows: 1fr;
+}
+
+.grid-modal-col1-alt {
+    display: grid;
+    grid: 1fr;
+    grid-gap: 24px;
+    justify-items: center;
+}

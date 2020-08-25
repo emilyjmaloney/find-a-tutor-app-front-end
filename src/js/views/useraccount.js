@@ -2,18 +2,18 @@ import React from "react";
 import "../../styles/profile.scss";
 import { ProfileModal } from "../component/profilemodal";
 
-export const Useraccount = () => {
+export const Useraccount = props => {
 	return (
 		<div>
 			<div className="grid-container">
 				<div className="profile-card">
 					<div className="headline">
 						<h5>Personal Settings</h5>
-						<i className="fas fa-pen" data-toggle="modal" data-target="#exampleModal" type="button" />
+						<i className="fas fa-pen" data-toggle="modal" data-target="#personal-modal" type="button" />
 					</div>
-					<ProfileModal title="Personal Settings" />
+					<ProfileModal title="Personal Settings" id="personal-modal" />
 
-					<div className="grid">
+					<div className="grid-col2">
 						<div className="profile-userdata">
 							<div className="label">First Name</div>
 							<div className="databox">First Name prop</div>
@@ -35,9 +35,10 @@ export const Useraccount = () => {
 				<div className="profile-card">
 					<div className="headline">
 						<h5>Account Settings</h5>
-						<i className="fas fa-pen" />
+						<i className="fas fa-pen" data-toggle="modal" data-target="#account-modal" type="button" />
 					</div>
-					<div className="grid">
+					<ProfileModal title="Account Settings" id="account-modal" />
+					<div className="grid-col2">
 						<div className="profile-userdata">
 							<div className="label">Username</div>
 							<div className="databox">Username prop</div>

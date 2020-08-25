@@ -11,7 +11,7 @@
     background: grey;
     transition: 0.5s;
 }
-// Delete account
+// DELETE ACCOUNT
 .delete-account{
     display: flex;
     justify-content: center;
@@ -19,7 +19,7 @@
     font-size: 16px;
 }
 
-//second nav
+//SECOND NAV
 .second-nav {
     display: flex;
     flex-direction: row;
@@ -32,16 +32,17 @@
     border-bottom: 2px solid white;
     font-size: 16px;
     font-weight: 500;
-    // cursor: pointer;
-    &.selected{ 
-    border-bottom: 2px solid blue;
-    transition: 0.2s;}
 }
 
-.second-nav-link:hover {
-    border-bottom: 2px solid lightgray;
-    transition: 0.5s;
+.nav-selected{ 
+    border-bottom: 2px solid blue;
+    transition: 0.2s;
 }
+
+// .second-nav-link:hover {
+//     border-bottom: 2px solid lightgray;
+//     transition: 0.5s;
+// }
 
 // .second-nav-link:active {
 //     border-bottom: 2px solid blue;
@@ -52,7 +53,7 @@
 //     box-shadow: #f8ffcc 0px 0px 50px 20px;
 // }
 
-// profile header card
+// PROFILE HEADER CARD
 .default-cover-image {
     background-color: lightcyan;
     padding-top: 40px;
@@ -77,7 +78,7 @@ font-size: 22px;
 //     width: 100%;
 // }
 
-// card
+// CARD
 .profile-card {
     background: white;
     padding: 20px;
@@ -89,6 +90,7 @@ font-size: 22px;
     display: flex; 
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 8px;
 }
 
 .label {
@@ -105,7 +107,7 @@ font-size: 22px;
 
 }
 
-// Grid
+// GRID
 .grid-col1 {
     display: grid;
     grid: 1fr;
@@ -157,22 +159,26 @@ font-size: 22px;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    border: 2px solid ;
-    &.monday {border: 2px solid red;}
-    &.tuesday {border: 2px solid orange;}
-    &.wednesday {border: 2px solid yellow;}
-    &.thursday {border: 2px solid green;}
-    &.friday {border: 2px solid blue;}
-    &.saturday {border: 2px solid purple;}
-    &.sunday {border: 2px solid teal;}
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    // border: 2px solid rgb(100, 100, 100);
+    &.monday {background: rgb(232, 255, 254)}
+    &.tuesday {background: rgb(232, 255, 237)}
+    &.wednesday {background: rgb(249, 232, 255)}
+    &.thursday {background: rgb(232, 234, 255)}
+    &.friday {background: rgb(255, 240, 232)}
+    &.saturday {background: rgb(255, 255, 235)}
+    &.sunday {background: rgb(255, 232, 237)}
 }
 
 .slot {
-    background-color: rgb(240, 240, 240);
-    padding: 16px;
+    // background-color: rgb(240, 240, 240);
+    padding: 8px;
     border-radius: 5px;
     display: flex;
     flex-grow: 1;
-    justify-content: center;
-    &.selected {background-color: rgb(24, 10, 155)}
+    background: rgba(255, 255, 255, .60);
+    // border: 1px solid ;
+    // justify-content: center;
+    // &.deselected {background-color: rgb(240, 240, 240)}
+    // &.selected {background-color: rgb(24, 10, 155)}
 }

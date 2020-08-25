@@ -14,6 +14,9 @@ import { Useraccount } from "./views/useraccount";
 import { Adminstudent } from "./views/adminstudent";
 import { Account } from "./views/account";
 import { Newfooter } from "./component/newfooter";
+import { Admintutor } from "./views/admintutor";
+import { Publicprofilestudent } from "./views/publicprofilestudent";
+import { Messages } from "./views/messages";
 
 //create your first component
 export const Layout = () => {
@@ -27,7 +30,7 @@ export const Layout = () => {
 					<Newnavbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Publicprofilestudent />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
@@ -37,6 +40,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/account">
 							<Account />
+						</Route>
+						<Route exact path="/messages">
+							<Messages />
 						</Route>
 						<Route exact path="/homepage">
 							<Homepage name={"Hello World"} />

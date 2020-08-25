@@ -9,9 +9,9 @@ export function Weeklyavailability() {
 					<h5>Monday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday tuesday">
@@ -19,9 +19,9 @@ export function Weeklyavailability() {
 					<h5>Tuesday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday wednesday">
@@ -29,9 +29,9 @@ export function Weeklyavailability() {
 					<h5>Wednesday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday thursday">
@@ -39,9 +39,9 @@ export function Weeklyavailability() {
 					<h5>Thursday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday friday">
@@ -49,9 +49,9 @@ export function Weeklyavailability() {
 					<h5>Friday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday saturday">
@@ -59,9 +59,9 @@ export function Weeklyavailability() {
 					<h5>Saturday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 			<div className="weekday sunday">
@@ -69,9 +69,9 @@ export function Weeklyavailability() {
 					<h5>Sunday</h5>
 				</div>
 				<div className="grid-col3">
-					<div className="slot">Morning Session</div>
-					<div className="slot">Afternoon Session</div>
-					<div className="slot">Evening Session</div>
+					<div className="slot">{"morning availability prop"}</div>
+					<div className="slot">{"afternoon availability prop"}</div>
+					<div className="slot">{"evening availability prop"}</div>
 				</div>
 			</div>
 		</div>
