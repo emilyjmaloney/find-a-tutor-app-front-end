@@ -31,13 +31,8 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Newnavbar />
 					<Switch>
-<<<<<<< HEAD
 						<Route exact path="/">
-							<Publicprofilestudent />
-=======
-						<Route exact path="/home">
 							<Home />
->>>>>>> 9c17af0cc4486e26fe0094e8ba73180cd5467c0d
 						</Route>
 						<Route exact path="/searchstudentsheader">
 							<Searchstudentsheader />
