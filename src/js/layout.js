@@ -6,6 +6,8 @@ import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 import { Homepage } from "./views/homepage";
+import { Searchstudentsheader } from "./component/searchstudentsheader";
+
 import { Newnavbar } from "./component/newnavbar";
 import { Footer } from "./component/footer";
 import { Profileheader } from "./component/profileheader";
@@ -29,8 +31,16 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Newnavbar />
 					<Switch>
+<<<<<<< HEAD
 						<Route exact path="/">
 							<Publicprofilestudent />
+=======
+						<Route exact path="/home">
+							<Home />
+>>>>>>> 9c17af0cc4486e26fe0094e8ba73180cd5467c0d
+						</Route>
+						<Route exact path="/searchstudentsheader">
+							<Searchstudentsheader />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />

@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/profile.scss";
 import { Link } from "react-router-dom";
-import { Select } from "react-select";
+// import { Select } from "react-select";
 
 export default class Profilenav extends React.Component {
 	// export function Profilenav() {
