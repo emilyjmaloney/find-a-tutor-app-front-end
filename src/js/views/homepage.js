@@ -4,15 +4,20 @@ import { Context } from "../store/appContext";
 
 export const Homepage = () => {
 	const { store, actions } = useContext(Context);
-    //login
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    // signup
-    const [firstName, setFirstName] = useState("");
+	//login
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
+	// signup
+	const [isStudent, setIsStudent] = useState(true);
+	const [firstSubject, setFirstSubject] = useState("");
+	const [secondSubject, setSecondSubject] = useState("");
+	const [thirdSubject, setThirdSubject] = useState("");
+	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [username, setUsername] = useState("");
-    const [signupEmail, setSignupEmail] = useState("");
-    const [signupPassword, setSignupPassword] = useState("");
+	const [signupEmail, setSignupEmail] = useState("");
+	const [signupPassword, setSignupPassword] = useState("");
+
 	return (
 		<div className="container-fluid">
 			<div className="login-box w-100 justify-content-center d-flex align-items-center">
@@ -20,10 +25,9 @@ export const Homepage = () => {
 					<h2 className="display-4 text-center" id="top-title">
 						Welcome Back!
 					</h2>{" "}
-					{/* Welcome title */}
 					<form>
 						<div className="form-group row">
-							<label htmlFor="inputEmail3" className="col-sm-2 col-form-label">
+							<label htmlFor="loginEmail" className="col-sm-2 col-form-label">
 								Email Address
 							</label>
 							<div className="input-group">
@@ -35,7 +39,7 @@ export const Homepage = () => {
 								<input
 									type="email"
 									className="form-control"
-									id="inputEmail3"
+									id="loginEmail"
 									placeholder="Email Address"
 									required
 									autoFocus
@@ -44,7 +48,7 @@ export const Homepage = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="inputPassword3" className="col-sm-2 col-form-label">
+							<label htmlFor="loginPassword" className="col-sm-2 col-form-label">
 								Password
 							</label>
 							<div className="input-group">
@@ -56,46 +60,13 @@ export const Homepage = () => {
 								<input
 									type="password"
 									className="form-control"
-									id="inputPassword3"
+									id="loginPassword"
 									placeholder="Password"
 									required
 									onChange={e => setPassword(e.target.value)}
 								/>
 							</div>
 						</div>
-						{/* I am a tutor / student radios */}
-						{/* <fieldset className="form-group" id="top-radios">
-							<div className="row">
-								<legend className="col-form-label col-sm-2 pt-0">I am a </legend>
-								<div className="col-sm-10">
-									<div className="form-check">
-										<input
-											className="form-check-input"
-											type="radio"
-											name="gridRadios"
-											id="gridRadios1"
-											value="option1"
-											checked
-										/>
-										<label className="form-check-label" htmlFor="gridRadios1">
-											Student
-										</label>
-									</div>
-									<div className="form-check">
-										<input
-											className="form-check-input"
-											type="radio"
-											name="gridRadios"
-											id="gridRadios2"
-											value="option2"
-										/>
-										<label className="form-check-label" htmlFor="gridRadios3">
-											Tutor
-										</label>
-									</div>
-								</div>
-							</div>
-						</fieldset> */}
 						<div className="checkbox mb-3">
 							<label>
 								<input type="checkbox" value="remember-me" /> Remember me
@@ -129,7 +100,6 @@ export const Homepage = () => {
 					</h2>
 					<form>
 						<div className="d-flex flex-row">
-							{/* left form RADIOS begins here */}
 							<div className="col-sm-6" id="left-forms">
 								<div className="row col" id="radios">
 									<p>
@@ -143,8 +113,8 @@ export const Homepage = () => {
 												type="radio"
 												name="exampleRadios"
 												id="exampleRadios1"
-												value="option1"
-												checked
+												checked={isStudent}
+												onChange={e => setIsStudent(!isStudent)}
 											/>
 											<label className="form-check-label" htmlFor="exampleRadios1">
 												Student
@@ -156,7 +126,8 @@ export const Homepage = () => {
 												type="radio"
 												name="exampleRadios"
 												id="exampleRadios2"
-												value="option2"
+												checked={!isStudent}
+												onChange={e => setIsStudent(!isStudent)}
 											/>
 											<label className="form-check-label" htmlFor="exampleRadios2">
 												Tutor
@@ -164,80 +135,90 @@ export const Homepage = () => {
 										</div>
 									</div>
 								</div>
-								{/* left form drop downs */}
 								<div className="col" id="dropdowns">
 									<p>Pick Three Subjects Relevant to You</p>
-									<select className="row custom-select custom-select-md mb-3">
+									<select
+										id="first-subject"
+										value={firstSubject}
+										onChange={e => setFirstSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
 										<option selected>1st Subject</option>
-										<option value="1">Math</option>
-										<option value="2">Science</option>
-										<option value="3">Language Arts</option>
-										<option value="3">Reading</option>
-										<option value="3">Writing</option>
-										<option value="3">English</option>
-										<option value="3">Science</option>
-										<option value="3">Social Studies</option>
-										<option value="3">GED / SAT</option>
-										<option value="3">Spanish</option>
-										<option value="3">Other</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
 									</select>
-									<select className="row custom-select custom-select-md mb-3">
+									<select
+										id="second-subject"
+										value={secondSubject}
+										onChange={e => setSecondSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
 										<option selected>2nd Subject</option>
-										<option value="1">Math</option>
-										<option value="2">Science</option>
-										<option value="3">Language Arts</option>
-										<option value="3">Reading</option>
-										<option value="3">Writing</option>
-										<option value="3">English</option>
-										<option value="3">Science</option>
-										<option value="3">Social Studies</option>
-										<option value="3">GED / SAT</option>
-										<option value="3">Spanish</option>
-										<option value="3">Other</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
 									</select>
-									<select className="row custom-select custom-select-md mb-3">
+									<select
+										id="third-subject"
+										value={thirdSubject}
+										onChange={e => setThirdSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
 										<option selected>3rd Subject</option>
-										<option value="1">Math</option>
-										<option value="2">Science</option>
-										<option value="3">Language Arts</option>
-										<option value="3">Reading</option>
-										<option value="3">Writing</option>
-										<option value="3">English</option>
-										<option value="3">Science</option>
-										<option value="3">Social Studies</option>
-										<option value="3">GED / SAT</option>
-										<option value="3">Spanish</option>
-										<option value="3">Other</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
 									</select>
 								</div>
 							</div>
-							{/* right form begins here */}
 							<div className="col-sm-6" id="right-form">
 								<div className="form-group">
 									<div className="form-row">
 										<div className="form-group col-md-6">
-											<label htmlFor="inputEmail4">First Name</label>
+											<label htmlFor="inputFirstName">First Name</label>
 											<input
-												type="email"
+												type="text"
 												className="form-control"
-												id="inputEmail4"
-                                                placeholder="First Name"
-                                                onChange={e => setFirstName(e.target.value)}
+												id="inputFirstName"
+												placeholder="First Name"
+												onChange={e => setFirstName(e.target.value)}
 											/>
 										</div>
 										<div className="form-group col-md-6">
-											<label htmlFor="inputPassword4">Last Name</label>
+											<label htmlFor="inputLastName">Last Name</label>
 											<input
-												type="password"
+												type="text"
 												className="form-control"
-												id="inputPassword4"
-                                                placeholder="Last Name"
-                                                onChange={e => setLastName(e.target.value)}
+												id="inputLastName"
+												placeholder="Last Name"
+												onChange={e => setLastName(e.target.value)}
 											/>
 										</div>
 									</div>
 									<div className="form-group">
-										<label htmlFor="inputAddress">Username</label>
+										<label htmlFor="inputUsername">Username</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -247,15 +228,14 @@ export const Homepage = () => {
 											<input
 												type="text"
 												className="form-control"
-												id="inputAddress"
-												// <i className="far fa-user"></i>
-                                                placeholder="Username"
-                                                onChange={e => setUsername(e.target.value)}
+												id="inputUsername"
+												placeholder="Username"
+												onChange={e => setUsername(e.target.value)}
 											/>
 										</div>
 									</div>
 									<div className="form-group">
-										<label htmlFor="inputAddress2">Email Address</label>
+										<label htmlFor="inputEmail">Email Address</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -263,17 +243,16 @@ export const Homepage = () => {
 												</span>
 											</div>
 											<input
-												type="text"
+												type="email"
 												className="form-control"
-												id="inputAddress2"
-												// <i className="fas fa-envelope"></i>
-                                                placeholder="Email Address"
-                                                onChange={e => setSignupEmail(e.target.value)}
+												id="inputEmail"
+												placeholder="Email Address"
+												onChange={e => setSignupEmail(e.target.value)}
 											/>
 										</div>
 									</div>
 									<div className="form-group">
-										<label htmlFor="inputAddress3">Password</label>
+										<label htmlFor="inputPassword">Password</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -281,12 +260,11 @@ export const Homepage = () => {
 												</span>
 											</div>
 											<input
-												type="text"
+												type="password"
 												className="form-control"
-												id="inputAddress3"
-												// <i className="fas fa-lock"></i>
-                                                placeholder="Password"
-                                                onChange={e => setSignupPassword(e.target.value)}
+												id="inputPassword"
+												placeholder="Password"
+												onChange={e => setSignupPassword(e.target.value)}
 											/>
 										</div>
 									</div>
