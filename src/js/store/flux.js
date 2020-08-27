@@ -31,9 +31,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 					}
 				});
 			},
-			login: (ham, cheese) => {
+			login: async (ham, cheese) => {
 				// login endpoint receives 2 parameters - can name whatever - what is best naming practice?
-				fetch(`${apiUrlFindaTutor}login`, {
+				let response = await fetch(`${apiUrlFindaTutor}login`, {
 					// concatenates URL and the endpoint to link API
 					method: "POST", // request method for database
 					headers: {
@@ -44,15 +44,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 						email: ham,
 						password: cheese
 					})
-				})
-					.then(response => response.json())
-					.then(token => {
-						if (typeof token.msg != "undefined") {
-							// Notify.error(token.msg);
-						} else {
-							setStore({ token: token.jwt, user: token.user });
-						}
-					});
+				});
+				if (response.ok) {
+					let body = await response.json();
+					setStore({ token: body.jwt, user: body.user });
+					return true;
+				}
+				return false;
 			},
 			logout: () => {
 				setStore({ token: null });
@@ -61,6 +59,24 @@ const getState = ({ getStore, getActions, setStore }) => {
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
 			},
+			signup: (student, first_name, last_name, username, email_address, password) => {
+				fetch(`${apiUrlFindaTutor}signup`, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+
+					body: JSON.stringify({
+						student: student,
+						first_name: first_name,
+						last_name: last_name,
+						username: username,
+						email_address: email_address,
+						password: password
+					})
+				});
+			},
+
 			loadSomeData: () => {
 				/**
                     fetch().then().then(data => setStore({ "foo": data.bar }))
