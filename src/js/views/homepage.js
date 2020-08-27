@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useContext } from "react";
 import "../../styles/homepage.scss";
 import { Context } from "../store/appContext";
+import { useHistory } from "react-router-dom";
 
 export const Homepage = () => {
 	const { store, actions } = useContext(Context);
+	const history = useHistory();
 	//login
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -20,7 +22,7 @@ export const Homepage = () => {
 
 	return (
 		<div className="container-fluid">
-			<div className="login-box w-100 justify-content-center d-flex align-items-center">
+			<div className="login-box w-100 justify-content-center d-flex align-items-center" id="login-box">
 				<div className="w-50">
 					<h2 className="display-4 text-center" id="top-title">
 						Welcome Back!
@@ -80,7 +82,12 @@ export const Homepage = () => {
 									// 	e.stopPropagation();
 									// 	actions.login(email, password);
 									// }}
-									onClick={() => actions.login(email, password)}
+									onClick={async () => {
+										let login = await actions.login(email, password);
+										if (login) {
+											history.push("/account");
+										}
+									}}
 									type="button" //changed from submit
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
 									Login
@@ -93,7 +100,7 @@ export const Homepage = () => {
 					</form>
 				</div>
 			</div>
-			<div className="signup-box w-100">
+			<div className="signup-box w-100" id="signup-box">
 				<div className="container w-75">
 					<h2 className="display-4 text-center" id="signup-title">
 						Create a New Account
@@ -275,7 +282,18 @@ export const Homepage = () => {
 						<div className="form-group row justify-content-center" id="signup-button">
 							<div className="col-sm-4">
 								<button
-									type="submit"
+									onClick={async () => {
+										await actions.signup(
+											isStudent,
+											firstName,
+											lastName,
+											username,
+											signupEmail,
+											signupPassword
+										);
+										history.push("/homepage#login-box");
+									}}
+									type="button"
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
 									Sign Up
 								</button>
@@ -300,3 +318,5 @@ export const Homepage = () => {
 // # UN: emilyjean.maloney@gmail.com PW: emsmSecret
 // # UN: emily@gmail.com PW: password123
 // # UN: emilym@gmail.com PW: password123
+
+// changing input types: https://www.w3schools.com/html/html_form_input_types.asp
