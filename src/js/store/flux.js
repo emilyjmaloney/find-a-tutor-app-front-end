@@ -4,6 +4,11 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
+			user: {
+				student: "Student",
+				name: "sarah machicado"
+			},
+
 			demo: [
 				{
 					title: "FIRST",

@@ -5,7 +5,7 @@ import { Chatmessage } from "../views/chatmessage";
 
 export const Messages = () => {
 	return (
-		<div>
+		<div className="grid-messages-layout">
 			<Messagesnav />
 			<Chatmessage />
 		</div>
