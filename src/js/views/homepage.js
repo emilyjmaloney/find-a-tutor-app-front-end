@@ -275,6 +275,19 @@ export const Homepage = () => {
 						<div className="form-group row justify-content-center" id="signup-button">
 							<div className="col-sm-4">
 								<button
+									onClick={() =>
+										actions.signup(
+											isStudent,
+											firstSubject,
+											secondSubject,
+											thirdSubject,
+											firstName,
+											lastName,
+											username,
+											signupEmail,
+											signupPassword
+										)
+									}
 									type="submit"
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
 									Sign Up
@@ -300,3 +313,5 @@ export const Homepage = () => {
 // # UN: emilyjean.maloney@gmail.com PW: emsmSecret
 // # UN: emily@gmail.com PW: password123
 // # UN: emilym@gmail.com PW: password123
+
+// changing input types: https://www.w3schools.com/html/html_form_input_types.asp
