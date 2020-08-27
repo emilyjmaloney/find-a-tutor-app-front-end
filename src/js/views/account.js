@@ -19,7 +19,11 @@ export function Account(props) {
 	}
 	return (
 		<div>
-			<Profileheader id="update-photo-button" usertype={store.user.student} />
+			<Profileheader
+				id="update-photo-button"
+				usertype={store.currentUser.student === true ? "Student" : "Tutor"}
+				name={store.currentUser.name}
+			/>
 			{/* below is profile nav */}
 			<div className="grid-container">
 				<div className="second-nav">

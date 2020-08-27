@@ -62,10 +62,24 @@
     font-weight: 400;
 }
 
-.message-card {
+.text-message {
+    display: grid;
+    grid: 1fr;
+    grid-gap: 10px;
     width: 100%;
-    background-color: white;
-    padding: 10px;
+
+}
+
+.text-message-headline {
+display: grid;
+grid-template-columns: auto auto auto;
+justify-content: start;
+align-items: center;
+grid-gap: 12px;
+}
+
+.text-message-body {
+// color: aqua;
 }
 
 // SIDE NAV
@@ -94,6 +108,7 @@
 
 // CHAT MESSAGES VIEW
 
+
 .chat-user-photo {
     background-color: gray;
     border-radius: 60px;
@@ -111,8 +126,7 @@
 
 .chat-grid {
     display: grid;
-    grid-gap: 20px;
-    background-color:palegreen;
+    grid-gap: 30px;
     width: 100%;
     overflow-x: hidden; 
     overflow-y: auto;

@@ -9,7 +9,7 @@ export const Profileheader = props => {
 			<div className="profile-header">
 				<div className="profile-pic" />
 				<div>
-					<h3>Name Prop</h3>
+					<h3>{props.name}</h3>
 					<div className="subtext">{props.usertype}</div>
 					{props.id === "update-photo-button" && (
 						<div className="button" data-toggle="modal" data-target="#update-photo-modal" type="button">
@@ -31,5 +31,6 @@ export const Profileheader = props => {
 Profileheader.propTypes = {
 	title: PropTypes.string,
 	id: PropTypes.string,
-	usertype: PropTypes.string
+	usertype: PropTypes.string,
+	name: PropTypes.string
 };

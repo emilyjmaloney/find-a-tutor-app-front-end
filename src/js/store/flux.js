@@ -1,13 +1,11 @@
 // const apiUrl = https://3000-fcd93d66-2c70-4b31-be4c-487bfd6e9a80.ws-us02.gitpod.io/;
-const apiUrlFindaTutor = "https://3000-fcd93d66-2c70-4b31-be4c-487bfd6e9a80.ws-us02.gitpod.io/";
+const apiUrlFindaTutor = "https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
-			user: {
-				student: "Student",
-				name: "sarah machicado"
-			},
+
+			currentUser: null,
 
 			demo: [
 				{
@@ -52,7 +50,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				});
 				if (response.ok) {
 					let body = await response.json();
-					setStore({ token: body.jwt, user: body.user });
+					setStore({ token: body.jwt, currentUser: body.user });
 					return true;
 				}
 				return false;

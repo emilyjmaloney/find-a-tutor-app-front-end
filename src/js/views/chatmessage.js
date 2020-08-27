@@ -31,8 +31,9 @@ export const Chatmessage = () => {
 				<div className="input-message-grid">
 					<form>
 						<div className="form-group">
-							<textarea className="form-control" id="exampleFormControlTextarea1" rows="4" />
+							<textarea className="form-control" id="exampleFormControlTextarea1" rows="2" />
 						</div>
+						<i className="fas fa-paper-plane" />
 					</form>
 				</div>
 			</div>
