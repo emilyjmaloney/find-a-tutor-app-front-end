@@ -45,29 +45,15 @@ export const Newnavbar = () => {
 							Logout
 						</button>
 					) : (
-						<button className="btn btn-dark">Login</button>
+						<Link to="/homepage">
+							<button className="btn btn-dark">Login</button>
+						</Link>
 					)}
 				</div>
 			</nav>
 		</nav>
 	);
 };
-
-{
-	/* <form className="form-inline my-2 my-lg-0">
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Searching
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Inboxing
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Profileing
-				</button>
-			</form> */
-}
-
-
 
 // CODE FROM NAVBAR
 // import React from "react";

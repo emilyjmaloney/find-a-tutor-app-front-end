@@ -9,7 +9,6 @@ import { Homepage } from "./views/homepage";
 import { Searchstudentsheader } from "./component/searchstudentsheader";
 
 import { Newnavbar } from "./component/newnavbar";
-import { Footer } from "./component/footer";
 import { Profileheader } from "./component/profileheader";
 import { Profilenav } from "./component/profilenav";
 import { Useraccount } from "./views/useraccount";
