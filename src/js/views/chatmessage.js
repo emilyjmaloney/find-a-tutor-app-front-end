@@ -29,12 +29,16 @@ export const Chatmessage = () => {
 					<Chatmessageitem />
 				</div>
 				<div className="input-message-grid">
-					<form>
-						<div className="form-group">
-							<textarea className="form-control" id="exampleFormControlTextarea1" rows="2" />
-						</div>
-						<i className="fas fa-paper-plane" />
-					</form>
+					<div className="input-message">
+						<form>
+							<div className="form-group">
+								<textarea className="form-control" id="exampleFormControlTextarea1" rows="1" />
+							</div>
+						</form>
+					</div>
+					<div className="message-button">
+						<i className="fas fa-paper-plane fa-lg" />
+					</div>
 				</div>
 			</div>
 		</div>

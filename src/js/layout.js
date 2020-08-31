@@ -19,6 +19,8 @@ import { Newfooter } from "./component/newfooter";
 import { Admintutor } from "./views/admintutor";
 import { Publicprofilestudent } from "./views/publicprofilestudent";
 import { Messages } from "./views/messages";
+import { Profile } from "./views/profile";
+import { Search } from "./views/search";
 
 //create your first component
 export const Layout = () => {
@@ -32,10 +34,10 @@ export const Layout = () => {
 					<Newnavbar />
 					<Switch>
 						<Route exact path="/">
-							<Home />
+							<Publicprofilestudent />
 						</Route>
-						<Route exact path="/searchstudentsheader">
-							<Searchstudentsheader />
+						<Route exact path="/search">
+							<Search />
 						</Route>
 						<Route exact path="/demo">
 							<Demo />
@@ -45,6 +47,9 @@ export const Layout = () => {
 						</Route>
 						<Route exact path="/account">
 							<Account />
+						</Route>
+						<Route exact path="/profile">
+							<Profile />
 						</Route>
 						<Route exact path="/messages">
 							<Messages />

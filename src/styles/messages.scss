@@ -118,22 +118,39 @@ grid-gap: 12px;
 
 .chat-container {
     display: grid;
-    grid: 80% 10%;
-    padding: 20px;
-    grid-gap: 20px;
+    grid: 80% 40px;
+    padding: 20px 40px 40px 40px;
+    grid-gap: 40px;
     height: calc(100vh - 190px);
 }
 
 .chat-grid {
     display: grid;
-    grid-gap: 30px;
+    grid-gap: 40px;
     width: 100%;
     overflow-x: hidden; 
     overflow-y: auto;
 }
 
-.input-message-grid {
-    background-color: yellow;
-    height: 100px;
+.input-message {
+    height: 100%;
     width: 100%;
+}
+
+.input-message-grid {
+    display: grid;
+    grid-gap: 20px;
+    grid: 1fr / 1fr 38px;
+    height: 38px;
+    width: 100%;
+}
+
+.message-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: lightgrey;
+    border-radius: 10px;
+    height: 38px;
+    width: 38px;
 }

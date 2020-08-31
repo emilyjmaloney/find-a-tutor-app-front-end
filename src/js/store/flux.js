@@ -7,6 +7,76 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 			currentUser: null,
 
+			user: [
+				{
+					email_address: "test1@gmail.com",
+					first_name: "test1",
+					id: 1,
+					is_active: true,
+					last_name: "student",
+					name: "test 1 student",
+					student: true,
+					username: "test1student",
+					userprofile: [
+						{
+							profile_image: "",
+							about_me: "",
+							subjects: "",
+							weekday: "",
+							dailytime_slot: ""
+						}
+					],
+					messages: [
+						{
+							id: 1,
+							recipient_id: 2,
+							text: "hello world",
+							created_at: "08-27-2020"
+						}
+					]
+				},
+				{
+					email_address: "test2@gmail.com",
+					first_name: "test2",
+					id: 2,
+					is_active: true,
+					last_name: "student",
+					name: "test2 student",
+					student: true,
+					username: "test2student"
+				},
+				{
+					email_address: "test3@gmail.com",
+					first_name: "test3",
+					id: 3,
+					is_active: false,
+					last_name: "tutor",
+					name: "test3 tutor",
+					student: true,
+					username: "test3tutor"
+				},
+				{
+					email_address: "test4@gmail.com",
+					first_name: "test4",
+					id: 4,
+					is_active: false,
+					last_name: "tutor",
+					name: "test4 tutor",
+					student: true,
+					username: "test4tutor"
+				}
+			],
+
+			userprofile: [
+				{
+					profile_image: "",
+					about_me: "white",
+					subjects: "white",
+					weekday: "white",
+					daily_timeslot: "test"
+				}
+			],
+
 			demo: [
 				{
 					title: "FIRST",
