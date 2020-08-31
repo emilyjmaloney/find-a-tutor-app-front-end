@@ -100,131 +100,84 @@ export const Homepage = () => {
 					</form>
 				</div>
 			</div>
+			{/* BOTTOM HALF - CREATE A NEW ACCOUNT */}
 			<div className="signup-box w-100" id="signup-box">
 				<div className="container w-75">
 					<h2 className="display-4 text-center" id="signup-title">
 						Create a New Account
 					</h2>
 					<form>
-						<div className="d-flex flex-row">
-							<div className="col-sm-6" id="left-forms">
-								<div className="row col" id="radios">
+						<div className="form-group">
+							<div className="d-flex justify-content-between" id="top-forms">
+								<div id="top-left" className="form-group w-25 p-3">
 									<p>
 										Are you a Student or a Tutor? <br />
 									</p>
-									<div className="col" id="left-form">
-										<div className="form-group" />
-										<div className="form-check">
-											<input
-												className="form-check-input"
-												type="radio"
-												name="exampleRadios"
-												id="exampleRadios1"
-												checked={isStudent}
-												onChange={e => setIsStudent(!isStudent)}
-											/>
-											<label className="form-check-label" htmlFor="exampleRadios1">
-												Student
-											</label>
-										</div>
-										<div className="form-check">
-											<input
-												className="form-check-input"
-												type="radio"
-												name="exampleRadios"
-												id="exampleRadios2"
-												checked={!isStudent}
-												onChange={e => setIsStudent(!isStudent)}
-											/>
-											<label className="form-check-label" htmlFor="exampleRadios2">
-												Tutor
-											</label>
+									<div id="radios">
+										<div id="left-form">
+											<div className="form-group" />
+											<div className="form-check">
+												<input
+													className="form-check-input"
+													type="radio"
+													name="exampleRadios"
+													id="exampleRadios1"
+													checked={isStudent}
+													onChange={e => setIsStudent(!isStudent)}
+												/>
+												<label className="form-check-label" htmlFor="exampleRadios1">
+													Student
+												</label>
+											</div>
+											<div className="form-check">
+												<input
+													className="form-check-input"
+													type="radio"
+													name="exampleRadios"
+													id="exampleRadios2"
+													checked={!isStudent}
+													onChange={e => setIsStudent(!isStudent)}
+												/>
+												<label className="form-check-label" htmlFor="exampleRadios2">
+													Tutor
+												</label>
+											</div>
 										</div>
 									</div>
 								</div>
-								<div className="col" id="dropdowns">
-									<p>Pick Three Subjects Relevant to You</p>
-									<select
-										id="first-subject"
-										value={firstSubject}
-										onChange={e => setFirstSubject(event.target.value)}
-										className="row custom-select custom-select-md mb-3">
-										<option selected>1st Subject</option>
-										<option value="Math">Math</option>
-										<option value="science">Science</option>
-										<option value="Language Arts">Language Arts</option>
-										<option value="Reading">Reading</option>
-										<option value="Writing">Writing</option>
-										<option value="English">English</option>
-										<option value="Science">Science</option>
-										<option value="Social Studies">Social Studies</option>
-										<option value="GED / SAT">GED / SAT</option>
-										<option value="Spanish">Spanish</option>
-										<option value="Other">Other</option>
-									</select>
-									<select
-										id="second-subject"
-										value={secondSubject}
-										onChange={e => setSecondSubject(event.target.value)}
-										className="row custom-select custom-select-md mb-3">
-										<option selected>2nd Subject</option>
-										<option value="Math">Math</option>
-										<option value="science">Science</option>
-										<option value="Language Arts">Language Arts</option>
-										<option value="Reading">Reading</option>
-										<option value="Writing">Writing</option>
-										<option value="English">English</option>
-										<option value="Science">Science</option>
-										<option value="Social Studies">Social Studies</option>
-										<option value="GED / SAT">GED / SAT</option>
-										<option value="Spanish">Spanish</option>
-										<option value="Other">Other</option>
-									</select>
-									<select
-										id="third-subject"
-										value={thirdSubject}
-										onChange={e => setThirdSubject(event.target.value)}
-										className="row custom-select custom-select-md mb-3">
-										<option selected>3rd Subject</option>
-										<option value="Math">Math</option>
-										<option value="science">Science</option>
-										<option value="Language Arts">Language Arts</option>
-										<option value="Reading">Reading</option>
-										<option value="Writing">Writing</option>
-										<option value="English">English</option>
-										<option value="Science">Science</option>
-										<option value="Social Studies">Social Studies</option>
-										<option value="GED / SAT">GED / SAT</option>
-										<option value="Spanish">Spanish</option>
-										<option value="Other">Other</option>
-									</select>
+								{/* first & last name */}
+								<div className="form-group w-75 p-3" id="top-right">
+									<div className="form-group">
+										<div className="form-row">
+											<div className="form-group col-md-6">
+												<label htmlFor="inputFirstName">First Name</label>
+												<input
+													type="text"
+													className="form-control"
+													id="inputFirstName"
+													placeholder="First Name"
+													onChange={e => setFirstName(e.target.value)}
+												/>
+											</div>
+											<div className="form-group col-md-6">
+												<label htmlFor="inputLastName">Last Name</label>
+												<input
+													type="text"
+													className="form-control"
+													id="inputLastName"
+													placeholder="Last Name"
+													onChange={e => setLastName(e.target.value)}
+												/>
+											</div>
+										</div>
+									</div>
 								</div>
 							</div>
-							<div className="col-sm-6" id="right-form">
-								<div className="form-group">
-									<div className="form-row">
-										<div className="form-group col-md-6">
-											<label htmlFor="inputFirstName">First Name</label>
-											<input
-												type="text"
-												className="form-control"
-												id="inputFirstName"
-												placeholder="First Name"
-												onChange={e => setFirstName(e.target.value)}
-											/>
-										</div>
-										<div className="form-group col-md-6">
-											<label htmlFor="inputLastName">Last Name</label>
-											<input
-												type="text"
-												className="form-control"
-												id="inputLastName"
-												placeholder="Last Name"
-												onChange={e => setLastName(e.target.value)}
-											/>
-										</div>
-									</div>
-									<div className="form-group">
+
+							{/* account info to be centered */}
+							<div className="form-group-row d-flex justify-content-center">
+								<div className="form-group" id="un-email-pw">
+									<div className="row">
 										<label htmlFor="inputUsername">Username</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
@@ -241,7 +194,7 @@ export const Homepage = () => {
 											/>
 										</div>
 									</div>
-									<div className="form-group">
+									<div className="row">
 										<label htmlFor="inputEmail">Email Address</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
@@ -258,7 +211,7 @@ export const Homepage = () => {
 											/>
 										</div>
 									</div>
-									<div className="form-group">
+									<div className="row">
 										<label htmlFor="inputPassword">Password</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
@@ -320,3 +273,63 @@ export const Homepage = () => {
 // # UN: emilym@gmail.com PW: password123
 
 // changing input types: https://www.w3schools.com/html/html_form_input_types.asp
+
+{
+	/* <div className="col" id="dropdowns">
+									<p>Pick Three Subjects Relevant to You</p>
+									<select
+										id="first-subject"
+										value={firstSubject}
+										onChange={e => setFirstSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
+										<option selected>1st Subject</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
+									</select>
+									<select
+										id="second-subject"
+										value={secondSubject}
+										onChange={e => setSecondSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
+										<option selected>2nd Subject</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
+									</select>
+									<select
+										id="third-subject"
+										value={thirdSubject}
+										onChange={e => setThirdSubject(event.target.value)}
+										className="row custom-select custom-select-md mb-3">
+										<option selected>3rd Subject</option>
+										<option value="Math">Math</option>
+										<option value="science">Science</option>
+										<option value="Language Arts">Language Arts</option>
+										<option value="Reading">Reading</option>
+										<option value="Writing">Writing</option>
+										<option value="English">English</option>
+										<option value="Science">Science</option>
+										<option value="Social Studies">Social Studies</option>
+										<option value="GED / SAT">GED / SAT</option>
+										<option value="Spanish">Spanish</option>
+										<option value="Other">Other</option>
+									</select>
+								</div> */
+}

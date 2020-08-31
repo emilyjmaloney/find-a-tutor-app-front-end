@@ -1,6 +1,7 @@
 // import React from "react";
 import React, { Component } from "react";
 import "../../styles/newfooter.scss";
+import { Footer } from "./footer";
 
 export function Newfooter() {
 	return (
@@ -13,3 +14,18 @@ export function Newfooter() {
 		</footer>
 	);
 }
+
+
+
+
+//CODE FROM Footer
+// import React, { Component } from "react";
+
+// export const Footer = () => (
+// 	<footer className="footer mt-auto py-3 text-center">
+// 		<p>
+// 			Made with <i className="fa fa-heart text-danger" /> by{" "}
+// 			<a href="http://www.4geeksacademy.com">4Geeks Academy</a>
+// 		</p>
+// 	</footer>
+// );
