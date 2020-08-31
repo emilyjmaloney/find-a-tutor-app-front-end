@@ -1,0 +1,37 @@
+.searchstyles {
+    height: 445px;
+}
+
+.view-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.searchcard-grid {
+    display: grid;
+    grid: 1fr;
+    grid-gap: 20px;
+}
+
+.photo-center {
+    display: flex; 
+    justify-content: center;
+}
+
+.search-profile-photo {
+    background-color: gray;
+    height: 160px;
+    width: 160px;
+    border-radius: 100px;
+}
+
+.search-usertype {
+    font-size: 22px;
+}
+
+.line-with-icon {
+    display: grid;
+    align-items: center;
+    grid: 1fr / 30px auto;
+}

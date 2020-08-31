@@ -21,7 +21,7 @@ export function Account(props) {
 		<div>
 			<Profileheader
 				id="update-photo-button"
-				usertype={store.currentUser.student === true ? "Student" : "Tutor"}
+				usertype={store.currentUser.student != null && store.currentUser.student === true ? "Student" : "Tutor"}
 				name={store.currentUser.name}
 			/>
 			{/* below is profile nav */}

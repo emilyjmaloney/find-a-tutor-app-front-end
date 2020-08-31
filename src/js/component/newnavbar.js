@@ -18,19 +18,30 @@ export const Newnavbar = () => {
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link to="/searchstudentsheader">
+					<Link to="/search">
 						<button className="btn btn-dark my-2 my-sm-0">Search</button>
 					</Link>
 				</li>
 				<li className="nav-item mx-1">
-					<Link className="btn btn-dark my-2 my-sm-0" to="/account">
-						Profile
-					</Link>
+					{store.token != null ? (
+						<Link className="btn btn-dark my-2 my-sm-0" to="/account">
+							Account
+						</Link>
+					) : null}
 				</li>
 				<li className="nav-item mx-1">
-					<Link to="/messages">
-						<button className="btn btn-dark my-2 my-sm-0">Message</button>
-					</Link>
+					{store.token != null ? (
+						<Link className="btn btn-dark my-2 my-sm-0" to="/profile">
+							Profile
+						</Link>
+					) : null}
+				</li>
+				<li className="nav-item mx-1">
+					{store.token != null ? (
+						<Link to="/messages">
+							<button className="btn btn-dark my-2 my-sm-0">Message</button>
+						</Link>
+					) : null}
 				</li>
 			</ul>
 
