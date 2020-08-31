@@ -1,7 +1,6 @@
 // import React from "react";
 import React, { Component } from "react";
 import "../../styles/newfooter.scss";
-import { Footer } from "./footer";
 
 export function Newfooter() {
 	return (
@@ -14,9 +13,6 @@ export function Newfooter() {
 		</footer>
 	);
 }
-
-
-
 
 //CODE FROM Footer
 // import React, { Component } from "react";

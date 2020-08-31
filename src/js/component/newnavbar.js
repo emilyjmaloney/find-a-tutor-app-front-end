@@ -78,8 +78,6 @@ export const Newnavbar = () => {
 			</form> */
 }
 
-
-
 // CODE FROM NAVBAR
 // import React from "react";
 // import { Link } from "react-router-dom";
