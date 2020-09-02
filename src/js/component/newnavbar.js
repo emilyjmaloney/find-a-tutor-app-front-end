@@ -12,16 +12,11 @@ export const Newnavbar = () => {
 				</a>
 			</Link>
 			<ul className="navbar-nav flex-row ml-auto">
-				<li className="nav-item mx-1">
+				{/* <li className="nav-item mx-1">
 					<Link to="/homepage">
 						<button className="btn btn-dark my-2 my-sm-0">Homepage</button>
 					</Link>
-				</li>
-				<li className="nav-item mx-1">
-					<Link to="/search">
-						<button className="btn btn-dark my-2 my-sm-0">Search</button>
-					</Link>
-				</li>
+				</li> */}
 				<li className="nav-item mx-1">
 					{store.token != null ? (
 						<Link className="btn btn-dark my-2 my-sm-0" to="/account">
@@ -43,6 +38,11 @@ export const Newnavbar = () => {
 						</Link>
 					) : null}
 				</li>
+				<li className="nav-item mx-1">
+					<Link to="/search">
+						<button className="btn btn-dark my-2 my-sm-0">Search</button>
+					</Link>
+				</li>
 			</ul>
 
 			{/* Login/logout button that Paolo had in the example from class: */}
@@ -52,9 +52,11 @@ export const Newnavbar = () => {
 				</Link>
 				<div className="ml-auto">
 					{store.token != null ? (
-						<button onClick={() => actions.logout()} className="btn btn-light">
-							Logout
-						</button>
+						<Link to="/homepage">
+							<button onClick={() => actions.logout()} className="btn btn-light">
+								Logout
+							</button>
+						</Link>
 					) : (
 						<Link to="/homepage">
 							<button className="btn btn-dark">Login</button>
