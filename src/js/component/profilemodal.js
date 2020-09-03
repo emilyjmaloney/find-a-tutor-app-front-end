@@ -1,9 +1,12 @@
-import React, { Component } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import "../../styles/profilemodal.scss";
 import "../../styles/profile.scss";
+import { Context } from "../store/appContext";
 
 export const ProfileModal = props => {
+	const { store, actions } = useContext(Context);
+	const [obj, setObj] = useState();
 	return (
 		<div className="modal fade" id={props.id} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div className="modal-dialog modal-dialog-centered modal-dialog-scrollable">
@@ -22,7 +25,12 @@ export const ProfileModal = props => {
 							{props.id === "about-me-modal" && (
 								<div className="form-group">
 									<label htmlFor="exampleFormControlTextarea1">Enter your about me</label>
-									<textarea className="form-control" id="exampleFormControlTextarea1" rows="4" />
+									<textarea
+										onChange={e => setObj({ about_me: e.target.value })}
+										className="form-control"
+										id="exampleFormControlTextarea1"
+										rows="4"
+									/>
 								</div>
 							)}
 							{/* EXPERIENCE MODAL */}
@@ -30,7 +38,12 @@ export const ProfileModal = props => {
 								<>
 									<div className="form-group">
 										<label htmlFor="exampleFormControlTextarea1">Enter your experience</label>
-										<textarea className="form-control" id="exampleFormControlTextarea1" rows="4" />
+										<textarea
+											onChange={e => setObj({ experience: e.target.value })}
+											className="form-control"
+											id="exampleFormControlTextarea1"
+											rows="4"
+										/>
 									</div>
 									<div className="form-group">
 										<label htmlFor="exampleFormControlSelect1">
@@ -615,9 +628,10 @@ export const ProfileModal = props => {
 						<button type="button" className="btn btn-secondary" data-dismiss="modal">
 							Close
 						</button>
-						<button type="button" className="btn btn-primary">
+						<button onClick={() => actions.updateProfile(obj)} type="button" className="btn btn-primary">
 							Save
 						</button>
+						{/* conditional rendering exactly on navbar */}
 					</div>
 				</div>
 			</div>

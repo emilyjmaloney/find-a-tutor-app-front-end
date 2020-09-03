@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../../styles/messages.scss";
 
 export const Chatmessageitem = () => {
@@ -6,8 +7,8 @@ export const Chatmessageitem = () => {
 		<div className="text-message">
 			<div className="text-message-headline">
 				<div className="messages-user-photo chat-photo" />
-				<div className="messages-title chat-title">Sarah Machicado</div>
-				<div className="messages-datetime">Received Time</div>
+				<div className="messages-title chat-title">name prop</div>
+				<div className="messages-datetime">create_at prop</div>
 			</div>
 			<div className="text-message-body">
 				{
@@ -16,4 +17,11 @@ export const Chatmessageitem = () => {
 			</div>
 		</div>
 	);
+};
+Chatmessageitem.propTypes = {
+	title: PropTypes.string,
+	id: PropTypes.string,
+	name: PropTypes.string,
+	created_at: PropTypes.string,
+	text: PropTypes.string
 };

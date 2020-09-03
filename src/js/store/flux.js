@@ -91,6 +91,54 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			updateUser: object => {
+				console.log("OBJECT: ", object);
+				const store = getStore();
+				fetch(`${apiUrlFindaTutor}update-user/${store.currentUser.user.id}`, {
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				});
+			},
+
+			updateProfile: object => {
+				console.log("OBJECT: ", object);
+				const store = getStore();
+				fetch(`${apiUrlFindaTutor}update-userprofile/${store.currentUser.userprofile.id}`, {
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				});
+			},
+
+			updateTutor: object => {
+				console.log("OBJECT: ", object);
+				const store = getStore();
+				fetch(`${apiUrlFindaTutor}update-tutor/${store.currentUser.tutor.id}`, {
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				});
+			},
+
+			updateStudent: object => {
+				console.log("OBJECT: ", object);
+				const store = getStore();
+				fetch(`${apiUrlFindaTutor}update-student/${store.currentUser.student.id}`, {
+					method: "PATCH",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				});
+			},
+
 			protectedEndpoint: () => {
 				//calling, naming, connecting back to front
 				const store = getStore(); // ???
