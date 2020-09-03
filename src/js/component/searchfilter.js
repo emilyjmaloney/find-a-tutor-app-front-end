@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import "../../styles/profile.scss";
+import { Context } from "../store/appContext";
 
 export const Searchfilter = () => {
+	const [subject, setSubject] = useState("");
+	const [grade, setGrade] = useState("");
+	const [radio, setRadio] = useState("");
+	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="default-cover-image">
 			<div className="grid-container">
@@ -11,30 +17,37 @@ export const Searchfilter = () => {
 				</div>
 				<div id="search-forms">
 					<div id="filters">
-						<select className="row custom-select custom-select-md mb-3">
+						<select
+							className="row custom-select custom-select-md mb-3"
+							onChange={event => setSubject(event.target.value)}
+							value={subject}>
 							<option selected>Subject</option>
-							<option value="1">Math</option>
-							<option value="2">Science</option>
-							<option value="3">Language Arts</option>
-							<option value="3">Reading</option>
-							<option value="3">Writing</option>
-							<option value="3">English</option>
-							<option value="3">Science</option>
-							<option value="3">Social Studies</option>
-							<option value="3">GED / SAT</option>
-							<option value="3">Spanish</option>
-							<option value="3">Other</option>
+							{store.subjects.map((subject, index) => {
+								return (
+									<option key={index} value={subject}>
+										{subject}
+									</option>
+								);
+							})}
 						</select>
-						<select className="row custom-select custom-select-md mb-3">
+						<select
+							className="row custom-select custom-select-md mb-3"
+							onChange={event => setGrade(event.target.value)}
+							value={grade}>
 							<option selected>Grade</option>
-							<option value="1">Primary (K-2nd)</option>
-							<option value="2">Intermediate (3rd-5th)</option>
-							<option value="3">Middle School (6th-8th)</option>
-							<option value="3">High School (9th-12th)</option>
-							<option value="3">College / Higher Ed</option>
-							<option value="3">Other</option>
+							{store.grades.map((grade, index) => {
+								return (
+									<option key={index} value={grade}>
+										{grade}
+									</option>
+								);
+							})}
 						</select>
+						<div className>
+							<input type="text" className="form-control" id="inputFirstName" placeholder="Zip Code" />
+						</div>
 					</div>
+					{/* add onChange to radios */}
 					<div id="radios">
 						<div className="form-check form-check-inline">
 							<input
@@ -43,9 +56,11 @@ export const Searchfilter = () => {
 								name="inlineRadioOptions"
 								id="inlineRadio1"
 								value="option1"
+								onChange={e => setRadio(e.target.value)}
+								checked={radio === "option1"}
 							/>
 							<label className="form-check-label" htmlFor="inlineRadio1">
-								In-person Only
+								In-Person or Online
 							</label>
 						</div>
 						<div className="form-check form-check-inline">
@@ -55,9 +70,11 @@ export const Searchfilter = () => {
 								name="inlineRadioOptions"
 								id="inlineRadio2"
 								value="option2"
+								onChange={e => setRadio(e.target.value)}
+								checked={radio === "option2"}
 							/>
 							<label className="form-check-label" htmlFor="inlineRadio2">
-								Online Only
+								In-Person Only
 							</label>
 						</div>
 						<div className="form-check form-check-inline">
@@ -67,17 +84,31 @@ export const Searchfilter = () => {
 								name="inlineRadioOptions"
 								id="inlineRadio3"
 								value="option3"
+								onChange={e => setRadio(e.target.value)}
+								checked={radio === "option3"}
 							/>
 							<label className="form-check-label" htmlFor="inlineRadio3">
-								In-person or Online
+								Online Only
 							</label>
 						</div>
 					</div>
 				</div>
 				<div id="search-footer">
-					<button>Search</button>
+					<button disabled={subject === "" || radio === ""}>Search for Students</button>
 				</div>
 			</div>
 		</div>
 	);
 };
+
+<button
+	onClick={async () => {
+		let login = await actions.login(email, password);
+		if (login) {
+			history.push("/account");
+		}
+	}}
+	type="button" //changed from submit
+	className="btn btn-secondary btn-md btn-block text-center rounded-pill">
+	Login
+</button>;

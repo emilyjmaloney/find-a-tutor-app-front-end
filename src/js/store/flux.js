@@ -5,7 +5,26 @@ const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			token: null,
-
+			subjects: [
+				"Math",
+				"Science",
+				"Language Arts",
+				"Reading",
+				"Writing",
+				"English",
+				"Science",
+				"Social Studies",
+				"GED / SAT",
+				"Spanish",
+				"Other"
+			],
+			grades: [
+				"Primary (K-2nd)",
+				"Intermediate (3rd-5th)",
+				"Middle School (6th-8th)",
+				"High School (9th-12th)",
+				"College / Higher Ed"
+			],
 			currentUser: null,
 
 			user: [
