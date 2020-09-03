@@ -12,16 +12,11 @@ export const Newnavbar = () => {
 				</a>
 			</Link>
 			<ul className="navbar-nav flex-row ml-auto">
-				<li className="nav-item mx-1">
+				{/* <li className="nav-item mx-1">
 					<Link to="/homepage">
 						<button className="btn btn-dark my-2 my-sm-0">Homepage</button>
 					</Link>
-				</li>
-				<li className="nav-item mx-1">
-					<Link to="/search">
-						<button className="btn btn-dark my-2 my-sm-0">Search</button>
-					</Link>
-				</li>
+				</li> */}
 				<li className="nav-item mx-1">
 					{store.token != null ? (
 						<Link className="btn btn-dark my-2 my-sm-0" to="/account">
@@ -43,6 +38,11 @@ export const Newnavbar = () => {
 						</Link>
 					) : null}
 				</li>
+				<li className="nav-item mx-1">
+					<Link to="/search">
+						<button className="btn btn-dark my-2 my-sm-0">Search</button>
+					</Link>
+				</li>
 			</ul>
 
 			{/* Login/logout button that Paolo had in the example from class: */}
@@ -52,31 +52,21 @@ export const Newnavbar = () => {
 				</Link>
 				<div className="ml-auto">
 					{store.token != null ? (
-						<button onClick={() => actions.logout()} className="btn btn-light">
-							Logout
-						</button>
+						<Link to="/homepage">
+							<button onClick={() => actions.logout()} className="btn btn-light">
+								Logout
+							</button>
+						</Link>
 					) : (
-						<button className="btn btn-dark">Login</button>
+						<Link to="/homepage">
+							<button className="btn btn-dark">Login</button>
+						</Link>
 					)}
 				</div>
 			</nav>
 		</nav>
 	);
 };
-
-{
-	/* <form className="form-inline my-2 my-lg-0">
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Searching
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Inboxing
-				</button>
-				<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-					Profileing
-				</button>
-			</form> */
-}
 
 // CODE FROM NAVBAR
 // import React from "react";

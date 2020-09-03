@@ -107,14 +107,17 @@ export const Homepage = () => {
 						Create a New Account
 					</h2>
 					<form>
+						{/* radios, name, account info */}
 						<div className="form-group">
-							<div className="d-flex justify-content-between" id="top-forms">
-								<div id="top-left" className="form-group w-25 p-3">
+							<div className="d-flex justify-content-center" id="top">
+								<div className="form-group p-4" id="radio-title">
 									<p>
 										Are you a Student or a Tutor? <br />
 									</p>
+								</div>
+								<div className="form-group p-2" id="radios">
 									<div id="radios">
-										<div id="left-form">
+										<div>
 											<div className="form-group" />
 											<div className="form-check">
 												<input
@@ -146,10 +149,12 @@ export const Homepage = () => {
 									</div>
 								</div>
 								{/* first & last name */}
-								<div className="form-group w-75 p-3" id="top-right">
-									<div className="form-group">
+							</div>
+							<div className="d-flex justify-content-center" id="middle">
+								<div className="form-group">
+									<div className="form-group mb-0">
 										<div className="form-row">
-											<div className="form-group col-md-6">
+											<div className="form-group">
 												<label htmlFor="inputFirstName">First Name</label>
 												<input
 													type="text"
@@ -159,7 +164,9 @@ export const Homepage = () => {
 													onChange={e => setFirstName(e.target.value)}
 												/>
 											</div>
-											<div className="form-group col-md-6">
+										</div>
+										<div className="form-row">
+											<div className="form-group">
 												<label htmlFor="inputLastName">Last Name</label>
 												<input
 													type="text"
@@ -175,7 +182,7 @@ export const Homepage = () => {
 							</div>
 
 							{/* account info to be centered */}
-							<div className="form-group-row d-flex justify-content-center">
+							<div className="form-group-row d-flex justify-content-center" id="bottom">
 								<div className="form-group" id="un-email-pw">
 									<div className="row">
 										<label htmlFor="inputUsername">Username</label>
