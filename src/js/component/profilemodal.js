@@ -1,10 +1,14 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import "../../styles/profilemodal.scss";
 import "../../styles/profile.scss";
 import { Context } from "../store/appContext";
 
 export const ProfileModal = props => {
+	const [subject, setSubject] = useState("");
+	const [grade, setGrade] = useState("");
+	const [weekday, setWeekday] = useState("");
+	const [daily_timeslot, setDaily_timeslot] = useState("");
 	const { store, actions } = useContext(Context);
 	const [obj, setObj] = useState();
 	return (
@@ -92,41 +96,44 @@ export const ProfileModal = props => {
 										<div>{"What subjects are you interested in learning?"}</div>
 										<div>{"Please select three subjects below."}</div>
 									</label>
-									<select className="custom-select subjects">
-										<option selected>Choose First Subject...</option>
-										<option value="1">Language Arts</option>
-										<option value="2">Reading</option>
-										<option value="3">Writing</option>
-										<option value="4">English</option>
-										<option value="5">Science</option>
-										<option value="6">Social Studies</option>
-										<option value="7">GED / SAT</option>
-										<option value="8">Spanish</option>
-										<option value="9">Other</option>
+									<select
+										className="custom-select subjects"
+										onChange={e => e => setObj({ subjects: e.target.value })}
+										value={obj}>
+										<option selected>Choose First Subject</option>
+										{store.subjects.map((subject, index) => {
+											return (
+												<option key={index} value={subject}>
+													{subject}
+												</option>
+											);
+										})}
 									</select>
-									<select className="custom-select subjects">
-										<option selected>Choose Second Subject...</option>
-										<option value="1">Language Arts</option>
-										<option value="2">Reading</option>
-										<option value="3">Writing</option>
-										<option value="4">English</option>
-										<option value="5">Science</option>
-										<option value="6">Social Studies</option>
-										<option value="7">GED / SAT</option>
-										<option value="8">Spanish</option>
-										<option value="9">Other</option>
+									<select
+										className="custom-select subjects"
+										onChange={event => setSubject(event.target.value)}
+										value={subject}>
+										<option selected>Choose Second Subject</option>
+										{store.subjects.map((subject, index) => {
+											return (
+												<option key={index} value={subject}>
+													{subject}
+												</option>
+											);
+										})}
 									</select>
-									<select className="custom-select subjects">
-										<option selected>Choose Third Subject...</option>
-										<option value="1">Language Arts</option>
-										<option value="2">Reading</option>
-										<option value="3">Writing</option>
-										<option value="4">English</option>
-										<option value="5">Science</option>
-										<option value="6">Social Studies</option>
-										<option value="7">GED / SAT</option>
-										<option value="8">Spanish</option>
-										<option value="9">Other</option>
+									<select
+										className="custom-select subjects"
+										onChange={event => setSubject(event.target.value)}
+										value={subject}>
+										<option selected>Choose Third Subject</option>
+										{store.subjects.map((subject, index) => {
+											return (
+												<option key={index} value={subject}>
+													{subject}
+												</option>
+											);
+										})}
 									</select>
 								</div>
 							)}
@@ -464,25 +471,18 @@ export const ProfileModal = props => {
 										<label htmlFor="exampleFormControlSelect1">
 											<div>{"What is your current academic grade?"}</div>
 										</label>
-										<select className="custom-select subjects">
-											<option selected>Choose Current Grade...</option>
-											<option value="1">Kindergarten</option>
-											<option value="2">1st Grade</option>
-											<option value="3">2nd Grade</option>
-											<option value="4">3rd Grade</option>
-											<option value="5">4th Grade</option>
-											<option value="6">5th Grade</option>
-											<option value="7">6th Grade</option>
-											<option value="8">7th Grade</option>
-											<option value="9">8th Grade</option>
-											<option value="10">9th Grade</option>
-											<option value="11">10th Grade</option>
-											<option value="12">11th Grade</option>
-											<option value="13">12th Grade</option>
-											<option value="14">Freshman College</option>
-											<option value="15">Sophomore College</option>
-											<option value="16">Junior College</option>
-											<option value="17">Senior College</option>
+										<select
+											className="custom-select subjects"
+											onChange={event => setGrade(event.target.value)}
+											value={grade}>
+											<option selected>Select Current Grade</option>
+											{store.grades.map((grade, index) => {
+												return (
+													<option key={index} value={grade}>
+														{grade}
+													</option>
+												);
+											})}
 										</select>
 									</div>
 									<div className="form-group">
@@ -628,10 +628,18 @@ export const ProfileModal = props => {
 						<button type="button" className="btn btn-secondary" data-dismiss="modal">
 							Close
 						</button>
-						<button onClick={() => actions.updateProfile(obj)} type="button" className="btn btn-primary">
+						<button
+							onClick={() => {
+								props.id === "experience-modal" ? actions.updateTutor(obj) : actions.updateProfile(obj);
+							}}
+							type="button"
+							className="btn btn-primary">
 							Save
 						</button>
 						{/* conditional rendering exactly on navbar */}
+						{/* {store.token != null ? (
+						
+					) : null} */}
 					</div>
 				</div>
 			</div>

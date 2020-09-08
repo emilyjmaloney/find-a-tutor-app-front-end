@@ -6,6 +6,7 @@ import { Profilenav } from "../component/profilenav";
 import { Adminstudent } from "./adminstudent";
 import { Useraccount } from "./useraccount";
 import { Context } from "../store/appContext.js";
+import { Admintutor } from "../views/admintutor";
 
 export function Account(props) {
 	const { store, actions } = useContext(Context);
@@ -43,7 +44,7 @@ export function Account(props) {
 					</div>
 				</div>
 			</div>
-			{view === "admin" && <Adminstudent />}
+			{view === "admin" && store.currentUser.student == true ? <Adminstudent /> : <Admintutor />}
 			{view === "user" && <Useraccount />}
 		</div>
 	);

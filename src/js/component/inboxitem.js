@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import "../../styles/messages.scss";
 
 export const Inboxitem = () => {
@@ -13,9 +12,9 @@ export const Inboxitem = () => {
 		</div>
 	);
 };
-Inboxitem.propTypes = {
-	title: PropTypes.string,
-	id: PropTypes.string,
-	name: PropTypes.string,
-	created_at: PropTypes.string
-};
+// Inboxitem.propTypes = {
+// 	title: PropTypes.string,
+// 	id: PropTypes.string,
+// 	name: PropTypes.string,
+// 	created_at: PropTypes.string
+// };

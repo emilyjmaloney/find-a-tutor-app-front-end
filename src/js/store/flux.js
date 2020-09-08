@@ -1,6 +1,6 @@
 // const apiUrl = https://3000-fcd93d66-2c70-4b31-be4c-487bfd6e9a80.ws-us02.gitpod.io/; Emily's
 // const apiUrl =https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/; Sarah's
-const apiUrlFindaTutor = "https://3000-fcd93d66-2c70-4b31-be4c-487bfd6e9a80.ws-us02.gitpod.io/";
+const apiUrlFindaTutor = "https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -18,6 +18,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				"Spanish",
 				"Other"
 			],
+			allUsers: [],
 			grades: [
 				"Primary (K-2nd)",
 				"Intermediate (3rd-5th)",
@@ -25,8 +26,9 @@ const getState = ({ getStore, getActions, setStore }) => {
 				"High School (9th-12th)",
 				"College / Higher Ed"
 			],
+			weekday: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+			daily_timeslot: ["Morning", "Afternoon", "Evening"],
 			currentUser: null,
-
 			user: [
 				{
 					email_address: "test1@gmail.com",
@@ -86,7 +88,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					username: "test4tutor"
 				}
 			],
-
 			userprofile: [
 				{
 					profile_image: "",
@@ -96,7 +97,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					daily_timeslot: "test"
 				}
 			],
-
 			demo: [
 				{
 					title: "FIRST",
@@ -111,6 +111,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			]
 		},
 		actions: {
+			getASingleUser: () => {
+				const store = getStore();
+				fetch(`${apiUrlFindaTutor}get-single-user`, {
+					// concatenates URL and the endpoint to link API
+					method: "GET", // request method for database
+					headers: {
+						// database tab using token verification
+						"Content-Type": "application/json", // ??
+						Authorization: `Bearer ${store.token}` //type "authorization" and unique token into header for access
+					}
+				})
+					.then(res => res.json())
+					.then(data => setStore({ currentUser: data }));
+			},
 			updateUser: object => {
 				console.log("OBJECT: ", object);
 				const store = getStore();
@@ -122,7 +136,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					body: JSON.stringify(object)
 				});
 			},
-
 			updateProfile: object => {
 				console.log("OBJECT: ", object);
 				const store = getStore();
@@ -132,33 +145,30 @@ const getState = ({ getStore, getActions, setStore }) => {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify(object)
-				});
+				}).then(() => getActions().getASingleUser());
 			},
-
 			updateTutor: object => {
 				console.log("OBJECT: ", object);
 				const store = getStore();
-				fetch(`${apiUrlFindaTutor}update-tutor/${store.currentUser.tutor.id}`, {
+				fetch(`${apiUrlFindaTutor}update-tutor/${store.currentUser.tutor_profile.id}`, {
 					method: "PATCH",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify(object)
-				});
+				}).then(() => getActions().getASingleUser());
 			},
-
 			updateStudent: object => {
 				console.log("OBJECT: ", object);
 				const store = getStore();
-				fetch(`${apiUrlFindaTutor}update-student/${store.currentUser.student.id}`, {
+				fetch(`${apiUrlFindaTutor}update-student/${store.currentUser.student_profile.id}`, {
 					method: "PATCH",
 					headers: {
 						"Content-Type": "application/json"
 					},
 					body: JSON.stringify(object)
-				});
+				}).then(() => getActions().getASingleUser());
 			},
-
 			protectedEndpoint: () => {
 				//calling, naming, connecting back to front
 				const store = getStore(); // ???
@@ -180,7 +190,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: {
 						"Content-Type": "application/json"
 					},
-
 					body: JSON.stringify({
 						email: ham,
 						password: cheese
@@ -206,7 +215,6 @@ const getState = ({ getStore, getActions, setStore }) => {
 					headers: {
 						"Content-Type": "application/json"
 					},
-
 					body: JSON.stringify({
 						student: student,
 						first_name: first_name,
@@ -217,7 +225,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				});
 			},
-
+			loadAllUsers: () => {
+				const store = getStore(); // ???
+				fetch(`${apiUrlFindaTutor}getall`, {
+					// concatenates URL and the endpoint to link API
+					method: "GET", // request method for database
+					headers: {
+						// database tab using token verification
+						"Content-Type": "application/json" // ??
+					}
+				})
+					.then(res => res.json())
+					.then(data => setStore({ allUsers: data }));
+			},
 			loadSomeData: () => {
 				/**
                     fetch().then().then(data => setStore({ "foo": data.bar }))
@@ -226,19 +246,16 @@ const getState = ({ getStore, getActions, setStore }) => {
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
-
 				//we have to loop the entire demo array to look for the respective index
 				//and change its color
 				const demo = store.demo.map((elm, i) => {
 					if (i === index) elm.background = color;
 					return elm;
 				});
-
 				//reset the global store
 				setStore({ demo: demo });
 			}
 		}
 	};
 };
-
 export default getState;
