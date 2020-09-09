@@ -1,17 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import "../../styles/messages.scss";
 import { Chatmessageitem } from "../component/chatmessageitem";
 import { Context } from "../store/appContext";
 
 export const Chatmessage = () => {
 	const { store, actions } = useContext(Context);
+	const [allMessages, setAllMessages] = useState([]);
+
+	useEffect(
+		() => {
+			const mergeMessages = async () => {
+				var tempArray = [];
+				tempArray = [...store.currentUser.received_messages, ...store.currentUser.sent_messages];
+				setAllMessages(tempArray);
+			};
+			mergeMessages();
+		},
+		[store.currentUser]
+	);
 	return (
 		<div>
 			<div className="section-title chat">Chat with User</div>
 			<div className="chat-container">
 				<div className="chat-grid">
 					{store.token != null &&
-						store.currentUser.received_messages.map((message, index) => {
+						// store.currentUser.received_messages.map((message, index) => {
+						allMessages.map((message, index) => {
 							console.log("-----", message);
 							return (
 								<Chatmessageitem

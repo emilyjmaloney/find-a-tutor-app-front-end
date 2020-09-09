@@ -228,6 +228,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			//these are the query parameters needed for the API (back end is expecting themPostman
 			search: async (subject, radio, grade, zipcode, isStudent) => {
 				let queryString = `?subject=${subject}&radio=${radio}&student=${isStudent}`;
+				console.log(queryString);
 				if (grade != "") {
 					queryString += `&grade=${grade}`;
 				}
