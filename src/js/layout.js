@@ -33,7 +33,7 @@ export const Layout = () => {
 					<Newnavbar />
 					<Switch>
 						<Route exact path="/">
-							<Publicprofilestudent />
+							<Homepage />
 						</Route>
 						<Route exact path="/search">
 							<Search />

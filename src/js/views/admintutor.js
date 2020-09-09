@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "../../styles/profile.scss";
 import PropTypes from "prop-types";
 import { ProfileModal } from "../component/profilemodal";
 import { Weeklyavailability } from "../component/weeklyavailability";
+import { Context } from "../store/appContext";
 
 export const Admintutor = props => {
+	const { store, actions } = useContext(Context);
 	return (
 		<div>
 			<div className="grid-container fix-footer">
@@ -15,7 +17,7 @@ export const Admintutor = props => {
 					</div>
 					<ProfileModal title="About Me" id="about-me-modal" />
 					<div>
-						<p>About Me</p>
+						<p>{store.currentUser.userprofile.about_me}</p>
 					</div>
 				</div>
 				<div className="profile-card">
@@ -27,7 +29,7 @@ export const Admintutor = props => {
 
 					<div className="grid-col2">
 						<div>
-							<p>Experience</p>
+							<p>{store.currentUser.tutor_profile.experience}</p>
 						</div>
 						<div className="profile-userdata">
 							<div className="label">Available For Remote Sessions</div>

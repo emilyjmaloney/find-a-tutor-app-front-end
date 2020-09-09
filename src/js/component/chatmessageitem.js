@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import "../../styles/messages.scss";
+import { Context } from "../store/appContext";
 
-export const Chatmessageitem = () => {
+export const Chatmessageitem = props => {
+	const { store, actions } = useContext(Context);
+
+	function findName() {
+		const user = store.allUsers.find(item => item.id == props.recipient_id);
+
+		return user.name;
+	}
 	return (
 		<div className="text-message">
 			<div className="text-message-headline">
 				<div className="messages-user-photo chat-photo" />
-				<div className="messages-title chat-title">Sarah Machicado</div>
-				<div className="messages-datetime">Received Time</div>
+				<div className="messages-title chat-title">{findName()}</div>
+				<div className="messages-datetime">{props.created_at}</div>
 			</div>
-			<div className="text-message-body">
-				{
-					"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mattis vulputate enim nulla aliquet porttitor lacus luctus accumsan tortor. Vel pharetra vel turpis nunc eget lorem dolor. A diam sollicitudin tempor id eu nisl nunc mi. Elementum eu facilisis sed odio morbi quis. Sem integer vitae justo eget magna fermentum iaculis. Scelerisque varius morbi enim nunc faucibus. Quisque non tellus orci ac auctor. Posuere ac ut consequat semper viverra nam libero. Congue mauris rhoncus aenean vel elit scelerisque mauris pellentesque. Magna fermentum iaculis eu non diam phasellus vestibulum."
-				}
-			</div>
+			<div className="text-message-body">{props.text}</div>
 		</div>
 	);
+};
+Chatmessageitem.propTypes = {
+	title: PropTypes.string,
+	id: PropTypes.string,
+	recipient_id: PropTypes.number,
+	created_at: PropTypes.string,
+	text: PropTypes.string
 };

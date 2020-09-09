@@ -5,7 +5,7 @@ import { ProfileModal } from "../component/profilemodal";
 export const Useraccount = props => {
 	return (
 		<div>
-			<div className="grid-container">
+			<div className="grid-container fix-footer">
 				<div className="profile-card">
 					<div className="headline">
 						<h5>Personal Settings</h5>
