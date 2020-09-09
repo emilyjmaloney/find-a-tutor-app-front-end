@@ -6,14 +6,22 @@ export const Searchfilter = () => {
 	const [subject, setSubject] = useState("");
 	const [grade, setGrade] = useState("");
 	const [radio, setRadio] = useState("");
+	const [zipcode, setZipcode] = useState("");
+	const [isStudent, setIsStudent] = useState(false);
 	const { store, actions } = useContext(Context);
 
 	return (
 		<div className="default-cover-image">
 			<div className="grid-container">
 				<div>
-					<h3>Search for Students Needing Your Help!</h3>
-					<p>Use the filters below to find students searching for a tutor like you!</p>
+					<h3>Search for {!isStudent ? "Students Needing Your Help!" : " a Tutor ready to Help"} </h3>
+					<p>
+						Use the filters below to find{" "}
+						{!isStudent ? "students searching for a tutor like you!" : "a tutor!!"}{" "}
+					</p>
+					<button className="btn btn-dark" onClick={e => setIsStudent(!isStudent)}>
+						{isStudent ? "Search as Tutor" : "Search as Student"}
+					</button>
 				</div>
 				<div id="search-forms">
 					<div id="filters">
@@ -30,21 +38,30 @@ export const Searchfilter = () => {
 								);
 							})}
 						</select>
-						<select
-							className="row custom-select custom-select-md mb-3"
-							onChange={event => setGrade(event.target.value)}
-							value={grade}>
-							<option selected>Grade</option>
-							{store.grades.map((grade, index) => {
-								return (
-									<option key={index} value={grade}>
-										{grade}
-									</option>
-								);
-							})}
-						</select>
+						{!isStudent && (
+							<select
+								className="row custom-select custom-select-md mb-3"
+								onChange={event => setGrade(event.target.value)}
+								value={grade}>
+								<option selected>Grade</option>
+								{store.grades.map((grade, index) => {
+									return (
+										<option key={index} value={grade}>
+											{grade}
+										</option>
+									);
+								})}
+							</select>
+						)}
 						<div className>
-							<input type="text" className="form-control" id="inputFirstName" placeholder="Zip Code" />
+							<input
+								type="text"
+								className="form-control"
+								id="inputFirstName"
+								placeholder="Zip Code"
+								onChange={e => setZipcode(e.target.value)}
+								value={zipcode}
+							/>
 						</div>
 					</div>
 					{/* add onChange to radios */}
@@ -94,7 +111,18 @@ export const Searchfilter = () => {
 					</div>
 				</div>
 				<div id="search-footer">
-					<button disabled={subject === "" || radio === ""}>Search for Students</button>
+					<button
+						onClick={async () => {
+							let search = await actions.search(subject, radio, grade, zipcode, isStudent);
+							if (search) {
+								history.push("/search");
+							}
+						}}
+						disabled={subject === "" || radio === ""}>
+						{isStudent ? "Search for Tutor" : "Search for Student"}
+					</button>
+					{/* onClick flux action fetch to API
+                     main.py build query endpoint to recive  */}
 				</div>
 			</div>
 		</div>

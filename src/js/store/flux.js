@@ -169,6 +169,40 @@ const getState = ({ getStore, getActions, setStore }) => {
 					})
 				});
 			},
+			//these are the query parameters needed for the API (back end is expecting themPostman
+			search: async (subject, radio, grade, zipcode, isStudent) => {
+				let queryString = `?subject=${subject}&radio=${radio}&student=${isStudent}`;
+				if (grade != "") {
+					queryString += `&grade=${grade}`;
+				}
+				if (zipcode != "") {
+					queryString += `&zipcode=${zipcode}`;
+				}
+				let response = await fetch(`${apiUrlFindaTutor}search/${queryString}`);
+				if (response.ok) {
+					let searchresults = await response.json();
+					setStore({ searchresults });
+				}
+			},
+
+			// NOT COMPLETE - STILL WORKING 9.3.2020 6:30pm
+			// search: (subject, radio) => {
+			//     fetch(`${apiUrlFindaTutor}search`, {
+			// 		method: "GET",
+			// 		headers: {
+			// 			"Content-Type": "application/json"
+			//         },
+
+			//         body: JSON.stringify({
+			// 			subject: subject,
+			// 			grade: zipcode,
+			// 			zipcode: zipcode,
+			// 			online: online,
+			// 			email_address: email_address,
+			// 			password: password
+			// 		})
+			// 	});
+			// },
 
 			loadSomeData: () => {
 				/**
