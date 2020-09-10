@@ -1,6 +1,6 @@
-// const apiUrl = https://3000-fcd93d66-2c70-4b31-be4c-487bfd6e9a80.ws-us02.gitpod.io/; Emily's
+// const apiUrl = https://3000-b315a6d6-cff5-415f-9ec4-7e9985ecc531.ws-us02.gitpod.io/; Emily's
 // const apiUrl =https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/; Sarah's
-const apiUrlFindaTutor = "https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/";
+const apiUrlFindaTutor = "https://3000-b315a6d6-cff5-415f-9ec4-7e9985ecc531.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
@@ -246,10 +246,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			//these are the query parameters needed for the API (back end is expecting themPostman
 			search: async (subject, radio, grade, zipcode, isStudent) => {
-				let queryString = `?subject=${subject}&radio=${radio}&student=${isStudent}`;
+				let queryString = `?subject=${subject.toLowerCase()}&radio=${radio}&student=${isStudent}`;
 				console.log(queryString);
 				if (grade != "") {
-					queryString += `&grade=${grade}`;
+					queryString += `&grade=${grade.toLowerCase()}`;
 				}
 				if (zipcode != "") {
 					queryString += `&zipcode=${zipcode}`;

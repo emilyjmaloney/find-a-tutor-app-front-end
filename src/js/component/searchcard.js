@@ -1,7 +1,8 @@
 import React from "react";
 import "../../styles/profile.scss";
+import PropTypes from "prop-types";
 
-export const Searchcard = () => {
+export const Searchcard = ({ user }) => {
 	return (
 		<div className="profile-card searchstyles">
 			<div className="searchcard-grid">
@@ -9,18 +10,24 @@ export const Searchcard = () => {
 					<div className="search-profile-photo" />
 				</div>
 				<div>
-					<h4>Jane Doe</h4>
-					<div className="search-usertype">Usertype Prop</div>
-					<div>Grade Prop</div>
+					<h4>{user.name}</h4>
+					<div className="search-usertype">{user.student ? "student" : "tutor"}</div>
+					<div>{user.student && user.grade}</div>
 				</div>
 				<div>
-					<div className="line-with-icon">
+					{/* <div className="line-with-icon">
 						<i className="fas fa-map-marker-alt" />
 						<div>Miles Away Prop</div>
-					</div>
+					</div> */}
 					<div className="line-with-icon">
 						<i className="fas fa-check" />
-						<div>online prop</div>
+						<div>
+							{user.online == "option1"
+								? "In-Person or Online"
+								: user.online == "option2"
+									? "In-Person Only"
+									: "Online Only"}
+						</div>
 					</div>
 				</div>
 				<div className="button">View Profile</div>
@@ -28,3 +35,5 @@ export const Searchcard = () => {
 		</div>
 	);
 };
+
+Searchcard.propTypes = { user: PropTypes.object };

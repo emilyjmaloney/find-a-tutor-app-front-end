@@ -29,9 +29,7 @@ export const Homepage = () => {
 					</h2>{" "}
 					<form>
 						<div className="form-group row">
-							<label htmlFor="loginEmail" className="col-sm-2 col-form-label">
-								Email Address
-							</label>
+							<label htmlFor="loginEmail" className="col-sm-2 col-form-label" />
 							<div className="input-group">
 								<div className="input-group-prepend">
 									<span className=" input-group-text">
@@ -50,9 +48,7 @@ export const Homepage = () => {
 							</div>
 						</div>
 						<div className="form-group row">
-							<label htmlFor="loginPassword" className="col-sm-2 col-form-label">
-								Password
-							</label>
+							<label htmlFor="loginPassword" className="col-sm-2 col-form-label" />
 							<div className="input-group">
 								<div className="input-group-prepend">
 									<span className=" input-group-text">
@@ -90,7 +86,7 @@ export const Homepage = () => {
 									}}
 									type="button" //changed from submit
 									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
-									Login
+									Login to Connect
 								</button>
 							</div>
 						</div>
@@ -155,7 +151,7 @@ export const Homepage = () => {
 									<div className="form-group mb-0">
 										<div className="form-row">
 											<div className="form-group">
-												<label htmlFor="inputFirstName">First Name</label>
+												<label htmlFor="inputFirstName" />
 												<input
 													type="text"
 													className="form-control"
@@ -167,7 +163,7 @@ export const Homepage = () => {
 										</div>
 										<div className="form-row">
 											<div className="form-group">
-												<label htmlFor="inputLastName">Last Name</label>
+												<label htmlFor="inputLastName" />
 												<input
 													type="text"
 													className="form-control"
@@ -184,8 +180,8 @@ export const Homepage = () => {
 							{/* account info to be centered */}
 							<div className="form-group-row d-flex justify-content-center" id="bottom">
 								<div className="form-group" id="un-email-pw">
+									<label htmlFor="inputUsername" />
 									<div className="row">
-										<label htmlFor="inputUsername">Username</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -201,8 +197,8 @@ export const Homepage = () => {
 											/>
 										</div>
 									</div>
+									<label htmlFor="inputEmail" Email Address />
 									<div className="row">
-										<label htmlFor="inputEmail">Email Address</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
@@ -218,8 +214,8 @@ export const Homepage = () => {
 											/>
 										</div>
 									</div>
+									<label htmlFor="inputPassword" Password />
 									<div className="row">
-										<label htmlFor="inputPassword">Password</label>
 										<div className="input-group">
 											<div className="input-group-prepend">
 												<span className=" input-group-text">
