@@ -28,8 +28,14 @@ body {
 
 .blurple-btn {
     background-color: #382272;
+    color: white;
 }
 .blurple-btn:hover {
+    background-color: #5234A3;
+    color: white;
+}
+
+.blurple-btn:active {
     background-color: #5234A3;
     color: white;
 }
@@ -37,8 +43,8 @@ body {
 .icon {
     width: 30px;
     height: 30px;
-    background-color: white;
     margin-right: 16px;
+    background-color: white;
 }
 
 .navbar-brand {

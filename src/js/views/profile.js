@@ -7,7 +7,7 @@ export const Profile = () => {
 	return (
 		<div>
 			<Publicprofilestudent />
-			<Publicprofiletutor />
+			{/* <Publicprofiletutor /> */}
 		</div>
 	);
 };

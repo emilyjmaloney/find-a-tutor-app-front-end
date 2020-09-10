@@ -633,7 +633,7 @@ export const ProfileModal = props => {
 								props.id === "experience-modal" ? actions.updateTutor(obj) : actions.updateProfile(obj);
 							}}
 							type="button"
-							className="btn btn-primary">
+							className="btn btn-primary blurple-btn">
 							Save
 						</button>
 						{/* conditional rendering exactly on navbar */}

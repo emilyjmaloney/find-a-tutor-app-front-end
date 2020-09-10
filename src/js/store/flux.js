@@ -1,6 +1,6 @@
 // const apiUrl = https://3000-b315a6d6-cff5-415f-9ec4-7e9985ecc531.ws-us02.gitpod.io/; Emily's
 // const apiUrl =https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/; Sarah's
-const apiUrlFindaTutor = "https://3000-b315a6d6-cff5-415f-9ec4-7e9985ecc531.ws-us02.gitpod.io/";
+const apiUrlFindaTutor = "https://3000-c2e0b359-932e-4da0-8482-cc44165c0d9b.ws-us02.gitpod.io/";
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {

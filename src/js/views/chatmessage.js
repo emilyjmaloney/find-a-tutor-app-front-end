@@ -21,7 +21,7 @@ export const Chatmessage = () => {
 	);
 	return (
 		<div>
-			<div className="section-title chat">Chat with User</div>
+			<div className="section-title chat">Chat with Emily Maloney</div>
 			<div className="chat-container">
 				<div className="chat-grid">
 					{store.token != null &&
