@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import "../../styles/messages.scss";
 import { Context } from "../store/appContext";
+import userDefault from "../../img/userdefault.png";
 
 export const Chatmessageitem = props => {
 	const { store, actions } = useContext(Context);
@@ -14,7 +15,7 @@ export const Chatmessageitem = props => {
 	return (
 		<div className={`text-message ${props.class}`}>
 			<div className="text-message-headline">
-				<div className="messages-user-photo chat-photo" />
+				<img className="messages-user-photo chat-photo" src={userDefault} />
 				<div className="messages-title chat-title">{findName()}</div>
 				<div className="messages-datetime">{props.created_at}</div>
 			</div>

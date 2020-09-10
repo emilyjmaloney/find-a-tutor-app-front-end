@@ -22,7 +22,7 @@ export const Homepage = () => {
 	const [signupPassword, setSignupPassword] = useState("");
 
 	return (
-		<div className="container-fluid">
+		<div>
 			<div className="login-box w-100 justify-content-center d-flex align-items-center" id="login-box">
 				<div className="w-50">
 					<h2 className="display-4 text-center" id="top-title">

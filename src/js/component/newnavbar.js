@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import logo from "../../img/findatutor_logo_white.png";
 
 export const Newnavbar = () => {
 	const { store, actions } = useContext(Context);
@@ -8,7 +9,7 @@ export const Newnavbar = () => {
 		<nav className="navbar fixed-top navbar-expand-lg navbar-dark blurple-nav">
 			<Link to="/homepage">
 				<a className="navbar-brand" href="#">
-					<div className="icon" />
+					<img className="icon" src={logo} />
 					Find A Tutor!
 				</a>
 			</Link>

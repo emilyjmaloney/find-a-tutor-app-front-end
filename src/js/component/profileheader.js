@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/profile.scss";
 import { ProfileModal } from "../component/profilemodal";
-import { Image } from "cloudinary-react";
+import userDefault from "../../img/userdefault.png";
 
 export const Profileheader = props => {
 	return (
 		<div className="default-cover-image">
 			<div className="profile-header">
-				<div className="profile-pic">{/* <Image cloudName="sarah" publicId="divampp9m" /> */}</div>
+				<img className="profile-pic" src={userDefault} />
 				<div>
 					<h3>{props.name}</h3>
 					<div className="subtext">{props.usertype}</div>
