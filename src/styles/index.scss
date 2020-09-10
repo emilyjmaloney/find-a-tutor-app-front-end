@@ -22,6 +22,36 @@ body {
     // margin-bottom: 90px;
 }
 
+.blurple-nav {
+    background-color: #382272;
+}
+
+.blurple-btn {
+    background-color: #382272;
+}
+.blurple-btn:hover {
+    background-color: #5234A3;
+    color: white;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    margin-right: 16px;
+}
+
+.navbar-brand {
+    display: flex;
+}
+
+.icon-white {
+    color: white;
+}
+
+.icon-blurple {
+    color: #5234A3;
+}
 // .test {
 //     opacity: 40%;
 // }

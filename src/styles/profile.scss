@@ -2,13 +2,14 @@
     padding: 12px 24px;
     display: flex;
     justify-content: center;
-    background: lightgrey;
+    background: #382272;
+    color: white;
     font-size: 16px;
     border-radius: 5px;
 }
 
 .button:hover {
-    background: grey;
+    background: #5234A3;
     transition: 0.5s;
 }
 // DELETE ACCOUNT
@@ -35,7 +36,7 @@
 }
 
 .nav-selected{ 
-    border-bottom: 2px solid blue;
+    border-bottom: 2px solid #5234A3;
     transition: 0.2s;
 }
 
@@ -98,7 +99,7 @@ font-size: 22px;
 }
 
 .databox {
-    background-color: rgb(240, 240, 240);
+    background-color: #F7F3FF;
     padding: 16px;
     border-radius: 5px;
     display: flex;

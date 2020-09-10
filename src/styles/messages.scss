@@ -120,6 +120,8 @@ grid-gap: 12px;
     display: grid;
     grid: 80% 40px;
     padding: 20px 40px 40px 40px;
+    // message fixed bottom
+    align-content: space-between;
     grid-gap: 40px;
     height: calc(100vh - 190px);
 }
@@ -149,8 +151,12 @@ grid-gap: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightgrey;
+    background-color: #382272;
     border-radius: 10px;
     height: 38px;
     width: 38px;
+}
+
+.message-button:hover {
+    background-color: #5234A3;
 }
