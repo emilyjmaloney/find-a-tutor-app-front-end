@@ -41,8 +41,8 @@ export const Layout = () => {
 						<Route exact path="/demo">
 							<Demo />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/public-profile/:theid">
+							<Publicprofilestudent />
 						</Route>
 						<Route exact path="/account">
 							<Account />

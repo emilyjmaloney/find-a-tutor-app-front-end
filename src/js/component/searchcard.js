@@ -1,6 +1,7 @@
 import React from "react";
 import "../../styles/profile.scss";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const Searchcard = ({ user }) => {
 	return (
@@ -30,7 +31,9 @@ export const Searchcard = ({ user }) => {
 						</div>
 					</div>
 				</div>
-				<div className="button">View Profile</div>
+				<Link to={`/public-profile/${user.user_id}`}>
+					<div className="button">View Profile</div>
+				</Link>
 			</div>
 		</div>
 	);

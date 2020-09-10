@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import "../../styles/homepage.scss";
 import { Context } from "../store/appContext";
 import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Homepage = () => {
 	const { store, actions } = useContext(Context);
@@ -237,22 +238,31 @@ export const Homepage = () => {
 
 						<div className="form-group row justify-content-center" id="signup-button">
 							<div className="col-sm-4">
-								<button
-									onClick={async () => {
-										await actions.signup(
-											isStudent,
-											firstName,
-											lastName,
-											username,
-											signupEmail,
-											signupPassword
-										);
-										history.push("/homepage#login-box");
-									}}
-									type="button"
-									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
-									Sign Up
-								</button>
+								<a href="#login-box">
+									{" "}
+									<button
+										onClick={async () => {
+											await actions.signup(
+												isStudent,
+												firstName,
+												lastName,
+												username,
+												signupEmail,
+												signupPassword
+											);
+											// history.push("#login-box");
+										}}
+										// onClick={async () => {
+										// 	let login = await actions.login(email, password);
+										// 	if (login) {
+										// 		history.push("/account");
+										// 	}
+										// }}
+										type="button"
+										className="btn btn-secondary btn-md btn-block text-center rounded-pill">
+										Sign Up
+									</button>
+								</a>
 							</div>
 						</div>
 					</form>
