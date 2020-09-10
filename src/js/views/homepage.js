@@ -336,4 +336,3 @@ export const Homepage = () => {
 									</select>
 								</div> */
 }
-//commit - homepage.js: removed redundant text of labels in input headings in login. removed entire label tags from signup inputs.

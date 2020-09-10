@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import "../../styles/profile.scss";
+import "../../styles/searchfilter.scss";
 import { Context } from "../store/appContext";
 
 export const Searchfilter = () => {
@@ -14,13 +14,18 @@ export const Searchfilter = () => {
 		<div className="default-cover-image">
 			<div className="grid-container">
 				<div>
-					<h3>Search for {!isStudent ? "Students Needing Your Help!" : " a Tutor ready to Help"} </h3>
+					<h3>
+						{" "}
+						{!isStudent
+							? "Connecting Tutors with Students: Start Helping Today"
+							: "Struggling with School? Connect with a Tutor Today"}{" "}
+					</h3>
 					<p>
 						Use the filters below to find{" "}
 						{!isStudent ? "students searching for a tutor like you!" : "a tutor!!"}{" "}
 					</p>
-					<button className="btn btn-dark" onClick={e => setIsStudent(!isStudent)}>
-						{isStudent ? "Search as Tutor" : "Search as Student"}
+					<button className="btn btn-outline-secondary btn-sm" onClick={e => setIsStudent(!isStudent)}>
+						{isStudent ? "Tutors Click Here!" : "Not a Tutor? Click here!"}
 					</button>
 				</div>
 				<div id="search-forms">
@@ -28,8 +33,9 @@ export const Searchfilter = () => {
 						<select
 							className="row custom-select custom-select-md mb-3"
 							onChange={event => setSubject(event.target.value)}
-							value={subject}>
-							<option selected>Subject</option>
+							value={subject}
+							required>
+							<option selected>Subject (Mandatory)</option>
 							{store.subjects.map((subject, index) => {
 								return (
 									<option key={index} value={subject}>
@@ -43,7 +49,7 @@ export const Searchfilter = () => {
 								className="row custom-select custom-select-md mb-3"
 								onChange={event => setGrade(event.target.value)}
 								value={grade}>
-								<option selected>Grade</option>
+								<option selected>Grade (Optional)</option>
 								{store.grades.map((grade, index) => {
 									return (
 										<option key={index} value={grade}>
@@ -53,19 +59,19 @@ export const Searchfilter = () => {
 								})}
 							</select>
 						)}
-						<div className>
+						<div id="zipcode">
 							<input
 								type="text"
 								className="form-control"
 								id="inputFirstName"
-								placeholder="Zip Code"
+								placeholder="Zip Code (Optional)"
 								onChange={e => setZipcode(e.target.value)}
 								value={zipcode}
 							/>
 						</div>
 					</div>
-					{/* add onChange to radios */}
 					<div id="radios">
+						<h5>Location Preference (Mandatory)</h5>
 						<div className="form-check form-check-inline">
 							<input
 								className="form-check-input"
@@ -119,10 +125,12 @@ export const Searchfilter = () => {
 							}
 						}}
 						disabled={subject === "" || radio === ""}>
-						{isStudent ? "Search for Tutor" : "Search for Student"}
+						{isStudent
+							? "Click Here to Search for a Qualified Tutor"
+							: "Click Here to Begin Your Search for Students!"}
 					</button>
 					{/* onClick flux action fetch to API
-                     main.py build query endpoint to recive  */}
+                     main.py build query endpoint to recieve  */}
 				</div>
 			</div>
 		</div>
