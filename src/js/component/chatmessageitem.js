@@ -12,7 +12,7 @@ export const Chatmessageitem = props => {
 		return user.name;
 	}
 	return (
-		<div className="text-message">
+		<div className={`text-message ${props.class}`}>
 			<div className="text-message-headline">
 				<div className="messages-user-photo chat-photo" />
 				<div className="messages-title chat-title">{findName()}</div>
@@ -27,5 +27,6 @@ Chatmessageitem.propTypes = {
 	id: PropTypes.string,
 	recipient_id: PropTypes.number,
 	created_at: PropTypes.string,
-	text: PropTypes.string
+	text: PropTypes.string,
+	class: PropTypes.string
 };

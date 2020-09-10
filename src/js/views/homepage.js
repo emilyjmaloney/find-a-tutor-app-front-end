@@ -86,7 +86,7 @@ export const Homepage = () => {
 										}
 									}}
 									type="button" //changed from submit
-									className="btn btn-secondary btn-md btn-block text-center rounded-pill">
+									className="btn btn-md btn-block text-center rounded-pill blurple-btn">
 									Login to Connect
 								</button>
 							</div>
@@ -259,7 +259,7 @@ export const Homepage = () => {
 										// 	}
 										// }}
 										type="button"
-										className="btn btn-secondary btn-md btn-block text-center rounded-pill">
+										className="btn btn-md btn-block text-center rounded-pill blurple-btn">
 										Sign Up
 									</button>
 								</a>

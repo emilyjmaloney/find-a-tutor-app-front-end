@@ -16,7 +16,7 @@
     font-size: 22px;
     font-weight: 500;
     &.chat {background-color: 0}
-    &.inbox {background-color: #C0C4F2;}
+    &.inbox {background-color: #6A45CF; color: white;}
 }
 
 // INBOX
@@ -85,13 +85,13 @@ grid-gap: 12px;
 // SIDE NAV
 
 .sidenav-boxshadow {
-    box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.15)
+    box-shadow: 4px 0px 12px rgba(56, 34, 114, 0.20)
 }
 
 .sidenav-container {
     display: grid;
     grid: 1fr;
-    background-color: #C0C4F2;
+    background-color: #6A45CF;
     padding: 20px 10px 20px 10px;
     width: 100%;
     height: calc(100vh - 190px);
@@ -120,6 +120,8 @@ grid-gap: 12px;
     display: grid;
     grid: 80% 40px;
     padding: 20px 40px 40px 40px;
+    // message fixed bottom
+    align-content: space-between;
     grid-gap: 40px;
     height: calc(100vh - 190px);
 }
@@ -149,8 +151,12 @@ grid-gap: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: lightgrey;
+    background-color: #382272;
     border-radius: 10px;
     height: 38px;
     width: 38px;
+}
+
+.message-button:hover {
+    background-color: #5234A3;
 }
