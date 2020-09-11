@@ -1,15 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
+import logo from "../../img/findatutor-blurple.png";
 
 export const Newnavbar = () => {
 	const { store, actions } = useContext(Context);
 	return (
-		<nav className="navbar fixed-top navbar-expand-lg navbar-dark blurple-nav">
+		<nav className="navbar fixed-top navbar-expand-lg navbar-light custom-nav">
 			<Link to="/homepage">
 				<a className="navbar-brand" href="#">
-					<div className="icon" />
-					Find A Tutor!
+					<img className="icon" src={logo} />
+					<div className="logo-title">Find A Tutor!</div>
 				</a>
 			</Link>
 			<ul className="navbar-nav flex-row ml-auto">
@@ -20,14 +21,14 @@ export const Newnavbar = () => {
 				</li> */}
 				<li className="nav-item mx-1">
 					{store.token != null ? (
-						<Link className="btn btn-outline-light my-2 my-sm-0 blurple-btn" to="/account">
+						<Link className="btn btn-outline-light my-2 my-sm-0 custom-btn" to="/account">
 							Account
 						</Link>
 					) : null}
 				</li>
 				<li className="nav-item mx-1">
 					{store.token != null ? (
-						<Link className="btn btn-outline-light my-2 my-sm-0 blurple-btn" to="/profile">
+						<Link className="btn btn-outline-light my-2 my-sm-0 custom-btn" to="/profile">
 							Profile
 						</Link>
 					) : null}
@@ -35,13 +36,13 @@ export const Newnavbar = () => {
 				<li className="nav-item mx-1">
 					{store.token != null ? (
 						<Link to="/messages">
-							<button className="btn btn-outline-light my-2 my-sm-0 blurple-btn">Message</button>
+							<button className="btn btn-outline-light my-2 my-sm-0 custom-btn">Message</button>
 						</Link>
 					) : null}
 				</li>
 				<li className="nav-item mx-1">
 					<Link to="/search">
-						<button className="btn btn-outline-light my-2 my-sm-0 blurple-btn">Search</button>
+						<button className="btn btn-outline-light my-2 my-sm-0 custom-btn">Search</button>
 					</Link>
 				</li>
 			</ul>
@@ -54,13 +55,13 @@ export const Newnavbar = () => {
 				<div className="ml-auto">
 					{store.token != null ? (
 						<Link to="/homepage">
-							<button onClick={() => actions.logout()} className="btn btn-outline-light blurple-btn">
+							<button onClick={() => actions.logout()} className="btn btn-outline-light custom-btn">
 								Logout
 							</button>
 						</Link>
 					) : (
 						<Link to="/homepage">
-							<button className="btn btn-outline-light blurple-btn">Login</button>
+							<button className="btn btn-outline-light custom-btn">Login</button>
 						</Link>
 					)}
 				</div>

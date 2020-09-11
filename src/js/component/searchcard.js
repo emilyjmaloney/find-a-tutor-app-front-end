@@ -2,13 +2,14 @@ import React from "react";
 import "../../styles/profile.scss";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import userDefault from "../../img/userdefault.png";
 
 export const Searchcard = ({ user }) => {
 	return (
 		<div className="profile-card searchstyles">
 			<div className="searchcard-grid">
 				<div className="photo-center">
-					<div className="search-profile-photo" />
+					<img className="search-profile-photo" src={userDefault} />
 				</div>
 				<div>
 					<h4>{user.name}</h4>
