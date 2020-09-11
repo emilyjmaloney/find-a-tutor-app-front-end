@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import "../../styles/profile.scss";
 import { Profileheader } from "../component/profileheader";
 import { Context } from "../store/appContext.js";
+import { Weeklyavailability } from "../component/weeklyavailability";
 
 export const Publicprofiletutor = () => {
 	const { store, actions } = useContext(Context);
@@ -22,7 +23,7 @@ export const Publicprofiletutor = () => {
 					<div className="headline">
 						<h5>Experience Info</h5>
 					</div>
-                   <div className="grid-col2">
+					<div className="grid-col2">
 						<div>
 							<p>I am a Tutor for 15 years</p>
 						</div>
@@ -36,7 +37,7 @@ export const Publicprofiletutor = () => {
 					<div className="headline">
 						<h5>Subjects I Teach</h5>
 					</div>
-                    <div className="grid-col3">
+					<div className="grid-col3">
 						<div className="profile-userdata">
 							<div className="label">First Subject</div>
 							<div className="databox">Writing</div>
@@ -55,7 +56,7 @@ export const Publicprofiletutor = () => {
 					<div className="headline">
 						<h5>My Availability</h5>
 					</div>
-                    <div className="grid-col1">
+					<div className="grid-col1">
 						<Weeklyavailability />
 					</div>
 				</div>

@@ -65,7 +65,7 @@ export const Publicprofilestudent = () => {
 					<div className="headline">
 						<h5>My Availability</h5>
 					</div>
-                    <div className="grid-col1">
+					<div className="grid-col1">
 						<Weeklyavailability />
 					</div>
 				</div>
