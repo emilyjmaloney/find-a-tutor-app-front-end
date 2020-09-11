@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../../styles/profile.scss";
 import { ProfileModal } from "../component/profilemodal";
-import { Image } from "cloudinary-react";
+// import { Image } from "cloudinary-react";
 
 export const Profileheader = props => {
 	return (

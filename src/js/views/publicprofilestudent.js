@@ -23,7 +23,7 @@ export const Publicprofilestudent = () => {
 					<div className="headline">
 						<h5>About me</h5>
 					</div>
-					<p>{store.currentUser.userprofile.about_me}</p>
+					<p>{selectedUser.userprofile.about_me}</p>
 				</div>
 				<div className="profile-card">
 					<div className="headline">
