@@ -17,14 +17,18 @@ export const Searchfilter = () => {
 					<h3>
 						{" "}
 						{!isStudent
-							? "Connecting Tutors with Students: Start Helping Today"
-							: "Struggling with School? Connect with a Tutor Today"}{" "}
+							? "Tutors looking for Students: Search Here"
+							: "Students Looking for Tutors: Search Here"}{" "}
 					</h3>
 					<p>
 						Use the filters below to find{" "}
 						{!isStudent ? "students searching for a tutor like you!" : "a tutor!!"}{" "}
 					</p>
-					<button className="btn btn-outline-secondary btn-sm" onClick={e => setIsStudent(!isStudent)}>
+					<p>Must select a Subject and Location Preference in order to search</p>
+					<button
+						className="btn btn-outline-secondary btn-sm"
+						id="search-toggle"
+						onClick={e => setIsStudent(!isStudent)}>
 						{isStudent ? "Tutors Click Here!" : "Not a Tutor? Click here!"}
 					</button>
 				</div>

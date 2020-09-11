@@ -20,7 +20,7 @@ import { Publicprofilestudent } from "./views/publicprofilestudent";
 import { Messages } from "./views/messages";
 import { Profile } from "./views/profile";
 import { Search } from "./views/search";
-import { Image, CloudinaryContext } from "cloudinary-react";
+// import { Image, CloudinaryContext } from "cloudinary-react";
 
 //create your first component
 export const Layout = () => {

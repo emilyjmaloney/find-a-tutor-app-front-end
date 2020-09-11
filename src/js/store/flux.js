@@ -254,7 +254,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 				if (zipcode != "") {
 					queryString += `&zipcode=${zipcode}`;
 				}
-				let response = await fetch(`${apiUrlFindaTutor}search/${queryString}`);
+				let response = await fetch(`${apiUrlFindaTutor}search${queryString}`);
 				if (response.ok) {
 					let searchresults = await response.json();
 					setStore({ searchresults });

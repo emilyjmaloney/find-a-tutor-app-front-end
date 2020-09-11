@@ -24,7 +24,11 @@ export const Publicprofilestudent = () => {
 					<div className="headline">
 						<h5>About me</h5>
 					</div>
+<<<<<<< HEAD
 					<p>Hello! I am from California. I am interested in Science and Math</p>
+=======
+					<p>{selectedUser.userprofile.about_me}</p>
+>>>>>>> d127894e9742d693398b36ba9a05c0ae9332bf1c
 				</div>
 				<div className="profile-card">
 					<div className="headline">
