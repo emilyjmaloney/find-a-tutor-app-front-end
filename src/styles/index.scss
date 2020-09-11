@@ -7,14 +7,24 @@ p {
     margin: 0;
 }
 
+h2 {
+    color: #5234A3;
+}
+
 h3 {
      padding: 0;
     margin: 0;
+    color: #5234A3;
 }
 
 h4 {
      padding: 0;
     margin: 0;
+    color: #5234A3;
+}
+
+h5 {
+    color: #5234A3;
 }
 
 body {
@@ -22,22 +32,75 @@ body {
     // margin-bottom: 90px;
 }
 
-.blurple-nav {
-    background-color: #382272;
+.custom-nav {
+ background: #FEE4E9;
+ color: #5234A3;
 }
 
-.blurple-btn {
-    background-color: #382272;
-    color: white;
+.custom-btn {
+    background-color: #FEE4E9;
+    color: #5234A3;
+    border-color: #5234A3;
+    border-width: 2px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
 }
-.blurple-btn:hover {
-    background-color: #5234A3;
+.custom-btn:hover {
+    background-color: #FC5D99;
     color: white;
+    font-weight: 700;
+    border-color: #FC5D99;
 }
 
-.blurple-btn:active {
-    background-color: #5234A3;
+.custom-btn:active {
+    background-color: #FC5D99;
     color: white;
+    font-weight: 700;
+    border-color: #FC5D99;
+}
+
+.custom-btn:active:hover {
+    background-color: #FC5D99;
+    color: white;
+    font-weight: 700;
+    border-color: #FC5D99;
+}
+
+// .blurple-btn {
+//     background-color: #382272;
+//     color: white;
+// }
+// .blurple-btn:hover {
+//     background-color: #5234A3;
+//     color: white;
+// }
+
+// .blurple-btn:active {
+//     background-color: #5234A3;
+//     color: white;
+// }
+
+.home-btn {
+    background-color: #0DCD94;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.055em;
+    height: 50px;
+    box-shadow: 0 12px 22px rgba(56, 34, 114, 0.20);
+}
+.home-btn:hover {
+    background-color: #FEB738;
+    color: #5234A3;
+    font-weight: 700;
+    transition: 0.5s;
+    
+}
+
+.home-btn:active {
+    background-color: #FEB738;
+    color: #5234A3;
+    font-weight: 700;
+    
 }
 
 .icon {
@@ -51,6 +114,7 @@ body {
     grid: auto / auto auto;
     grid-gap: 16px;
     align-items: center;
+    color: #5234A3;
 }
 
 .icon-white {
@@ -59,6 +123,16 @@ body {
 
 .icon-blurple {
     color: #5234A3;
+}
+
+.logo-title {
+    color: #5234A3;
+    font-style: normal;
+    font-weight: 700;
+}
+
+a:hover {
+    text-decoration: none;
 }
 
 // .test {
