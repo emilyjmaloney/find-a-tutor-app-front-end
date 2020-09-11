@@ -22,15 +22,41 @@ export const Publicprofiletutor = () => {
 					<div className="headline">
 						<h5>Experience Info</h5>
 					</div>
+                   <div className="grid-col2">
+						<div>
+							<p>I am a Tutor for 15 years</p>
+						</div>
+						<div className="profile-userdata">
+							<div className="label">Available For Remote Sessions</div>
+							<div className="databox">Online Only</div>
+						</div>
+					</div>
 				</div>
 				<div className="profile-card">
 					<div className="headline">
 						<h5>Subjects I Teach</h5>
 					</div>
+                    <div className="grid-col3">
+						<div className="profile-userdata">
+							<div className="label">First Subject</div>
+							<div className="databox">Writing</div>
+						</div>
+						<div className="profile-userdata">
+							<div className="label">Second Subject</div>
+							<div className="databox">Math</div>
+						</div>
+						<div className="profile-userdata">
+							<div className="label">Third Subject</div>
+							<div className="databox">Language Arts</div>
+						</div>
+					</div>
 				</div>
 				<div className="profile-card">
 					<div className="headline">
 						<h5>My Availability</h5>
+					</div>
+                    <div className="grid-col1">
+						<Weeklyavailability />
 					</div>
 				</div>
 			</div>

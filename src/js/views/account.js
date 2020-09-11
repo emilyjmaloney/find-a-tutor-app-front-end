@@ -44,7 +44,7 @@ export function Account(props) {
 					</div>
 				</div>
 			</div>
-			{view === "admin" && store.currentUser.student == true ? <Adminstudent /> : <Admintutor />}
+			{view === "admin" ? store.currentUser.student == true ? <Adminstudent /> : <Admintutor /> : null}
 			{view === "user" && <Useraccount />}
 		</div>
 	);

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Profileheader } from "../component/profileheader";
 import { Context } from "../store/appContext.js";
 import { Link, useParams } from "react-router-dom";
+import { Weeklyavailability } from "../component/weeklyavailability";
 
 export const Publicprofilestudent = () => {
 	const { store, actions } = useContext(Context);
@@ -23,13 +24,12 @@ export const Publicprofilestudent = () => {
 					<div className="headline">
 						<h5>About me</h5>
 					</div>
-					<p>{store.currentUser.userprofile.about_me}</p>
+					<p>Hello! I am from California. I am interested in Science and Math</p>
 				</div>
 				<div className="profile-card">
 					<div className="headline">
 						<h5>Academic Info</h5>
 					</div>
-
 					<div className="grid-col2">
 						<div className="profile-userdata">
 							<div className="label">My Current Grade</div>
@@ -64,6 +64,9 @@ export const Publicprofilestudent = () => {
 				<div className="profile-card">
 					<div className="headline">
 						<h5>My Availability</h5>
+					</div>
+                    <div className="grid-col1">
+						<Weeklyavailability />
 					</div>
 				</div>
 			</div>
