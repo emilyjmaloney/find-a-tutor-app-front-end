@@ -63,15 +63,26 @@ export const Searchfilter = () => {
 								})}
 							</select>
 						)}
-						<div id="zipcode">
-							<input
-								type="text"
-								className="form-control"
-								id="inputFirstName"
-								placeholder="Zip Code (Optional)"
-								onChange={e => setZipcode(e.target.value)}
-								value={zipcode}
-							/>
+						<div className="row">
+							<div id="zipcode">
+								<input
+									type="text"
+									className="form-control"
+									id="inputFirstName"
+									placeholder="Zip Code (Optional)"
+									onChange={e => setZipcode(e.target.value)}
+									value={zipcode}
+								/>
+							</div>
+							<div>
+								<select id="distance">
+									<option>5 miles</option>
+									<option>10 miles</option>
+									<option>15 miles</option>
+									<option>20 miles</option>
+									<option>25 miles</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div id="radios">
